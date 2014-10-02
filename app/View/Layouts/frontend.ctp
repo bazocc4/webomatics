@@ -120,13 +120,13 @@
 		    <ul class="sidebar-nav">
 		        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
 		        <li class="sidebar-brand">
-		            <a href="#top">Start Bootstrap</a>
+		            <a href="#top"><?php echo $mySetting['title']; ?></a>
 		        </li>
 		        <li>
 		            <a href="#top">Home</a>
 		        </li>
 		        <li>
-		            <a href="#about">About</a>
+		            <a href="#about">About Us</a>
 		        </li>
 		        <li>
 		            <a href="#services">Services</a>
@@ -154,7 +154,7 @@
 						<p class="text-muted">Copyright &copy; <?php echo $mySetting['title']; ?> 2014</p>
 					</div>
 					<div class="col-lg-3 col-md-3">
-						<hr class="small visible-sm visible-xs">
+						<hr class="medium visible-sm visible-xs">
 						<ul class="list-inline">
 					        <li>
 					            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>

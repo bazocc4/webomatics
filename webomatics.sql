@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 01, 2014 at 11:46 AM
+-- Generation Time: Oct 02, 2014 at 05:26 PM
 -- Server version: 5.1.37
 -- PHP Version: 5.3.0
 
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `cms_accounts` (
 --
 
 INSERT INTO `cms_accounts` (`id`, `user_id`, `role_id`, `username`, `email`, `password`, `last_login`, `created`, `created_by`, `modified`, `modified_by`) VALUES
-(1, 1, 1, 'admin', 'admin@yahoo.com', '169e781bd52860b584879cbe117085da596238f3', '2014-09-30 16:03:17', '2013-01-04 00:00:00', 1, '2013-01-04 00:00:00', 1);
+(1, 1, 1, 'admin', 'admin@yahoo.com', '169e781bd52860b584879cbe117085da596238f3', '2014-10-02 13:49:06', '2013-01-04 00:00:00', 1, '2013-01-04 00:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -73,12 +73,16 @@ CREATE TABLE IF NOT EXISTS `cms_entries` (
   `lang_code` varchar(10) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `cms_entries`
 --
 
+INSERT INTO `cms_entries` (`id`, `entry_type`, `title`, `slug`, `description`, `main_image`, `parent_id`, `status`, `count`, `created`, `created_by`, `modified`, `modified_by`, `sort_order`, `lang_code`) VALUES
+(1, 'media', 'medium-logo', 'medium-logo', NULL, 0, 0, 1, 0, '2014-10-02 13:54:24', 1, '2014-10-02 13:54:24', 1, 1, 'en-1'),
+(2, 'pages', 'Home', 'home', '', 1, 0, 1, 0, '2014-10-02 13:55:41', 1, '2014-10-02 13:55:41', 1, 2, 'en-2'),
+(3, 'pages', 'Stylish Portfolio is the perfect theme for your next project!', 'about', '<p>This theme features some wonderful photography courtesy of <a href="http://join.deathtothestockphoto.com/" target="_blank">Death to the Stock Photo</a>.</p>\r\n', 0, 0, 1, 0, '2014-10-02 14:02:44', 1, '2014-10-02 14:03:36', 1, 3, 'en-3');
 
 -- --------------------------------------------------------
 
@@ -92,12 +96,15 @@ CREATE TABLE IF NOT EXISTS `cms_entry_metas` (
   `key` varchar(500) NOT NULL,
   `value` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `cms_entry_metas`
 --
 
+INSERT INTO `cms_entry_metas` (`id`, `entry_id`, `key`, `value`) VALUES
+(1, 1, 'image_type', 'png'),
+(2, 1, 'image_size', '484348');
 
 -- --------------------------------------------------------
 
@@ -159,7 +166,7 @@ INSERT INTO `cms_settings` (`id`, `key`, `value`) VALUES
 (17, 'table_view', 'complex'),
 (18, 'usd_sell', '9732.00'),
 (19, 'custom-pagination', '10'),
-(20, 'custom-email_contact', 'andybasuki88@gmail.com'),
+(20, 'custom-email_contact', 'info@webomatics.net'),
 (21, 'custom-phone_contact', '(081) 7525-5381');
 
 -- --------------------------------------------------------

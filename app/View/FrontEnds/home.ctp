@@ -6,10 +6,13 @@
 <header id="top" class="header">
     <div class="text-vertical-center row">
         <div class="col-xs-10 col-xs-offset-1">
-            <img src="<?php echo $imagePath; ?>images/medium-logo.png" alt="<?php echo $mySetting['title']; ?> logo design website" class="img-responsive center-block">
+            <?php
+                $homeimage = $this->Get->image_link(array('id' => $myEntry['Entry']['main_image']));
+            ?>
+            <img src="<?php echo $homeimage['display']; ?>" alt="<?php echo $mySetting['title'].' '.$myEntry['Entry']['title']; ?> logo design website" class="img-responsive center-block">
             <h3><?php echo $mySetting['description']; ?></h3>
             <br>
-            <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>            
+            <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
         </div>
     </div>
 </header>
@@ -19,8 +22,11 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
-                <p class="lead">This theme features some wonderful photography courtesy of <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>.</p>
+                <?php
+                    $about = $this->Get->meta_details('about', 'pages');
+                ?>
+                <h2><?php echo $about['Entry']['title']; ?></h2>
+                <div class="lead"><?php echo $about['Entry']['description']; ?></div>
             </div>
         </div>
         <!-- /.row -->

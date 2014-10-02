@@ -61,7 +61,15 @@ body {
 /* Custom Horizontal Rule */
 
 hr.small {
+    max-width: 100px;
+}
+
+hr.medium {
     max-width: 200px;
+}
+
+hr.large {
+    max-width: 300px;
 }
 
 /* Side Menu */
@@ -161,6 +169,7 @@ hr.small {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    color: #0855a2;
 }
 
 /* About */
