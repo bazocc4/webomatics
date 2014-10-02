@@ -4,11 +4,13 @@
 ?>
 <!-- Header -->
 <header id="top" class="header">
-    <div class="text-vertical-center">
-        <h1><?php echo $mySetting['title']; ?></h1>
-        <h3><?php echo $mySetting['description']; ?></h3>
-        <br>
-        <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
+    <div class="text-vertical-center row">
+        <div class="col-xs-10 col-xs-offset-1">
+            <img src="<?php echo $imagePath; ?>images/medium-logo.png" alt="<?php echo $mySetting['title']; ?> logo design website" class="img-responsive center-block">
+            <h3><?php echo $mySetting['description']; ?></h3>
+            <br>
+            <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>            
+        </div>
     </div>
 </header>
 
