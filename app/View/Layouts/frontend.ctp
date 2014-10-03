@@ -135,14 +135,14 @@
 		            <a href="#portfolio">Portfolio</a>
 		        </li>
 		        <li>
-		            <a href="#contact">Contact</a>
+		            <a href="#footer">Contact</a>
 		        </li>
 		    </ul>
 		</nav>
 		<?php echo $content_for_layout; ?>
 		<!-- Footer -->
 		<footer>
-		    <div class="container">
+		    <div class="container" id="footer">
 		        <div class="row">
 		        	<div class="col-lg-2 col-lg-offset-1 col-md-3">
 						<i class="fa fa-phone fa-fw"></i> <?php echo $mySetting['custom-phone_contact']; ?>
@@ -175,8 +175,10 @@
 		<!-- ADDITIONAL SCRIPT FOR LAYOUT -->
 		<script>
 			$(document).ready(function(){		
-				// Target your .container, .wrapper, .post, etc.
-    			$("body").fitVids();
+				// close menu after select menu
+				$("#sidebar-wrapper li a").click(function(){
+					$("#sidebar-wrapper").removeClass("active");
+				});
 
     			// Closes the sidebar menu
 				$("#menu-close").click(function(e) {
@@ -189,6 +191,9 @@
 				    e.preventDefault();
 				    $("#sidebar-wrapper").toggleClass("active");
 				});
+
+				// Target your .container, .wrapper, .post, etc.
+    			$("body").fitVids();
 		  	});
 		</script>
 	</body>
