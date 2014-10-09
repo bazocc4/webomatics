@@ -176,6 +176,15 @@ hr.large {
 
 .about {
     padding: 50px 0;
+    color: #428bca;
+}
+
+.about h2{
+    font-style: italic;
+}
+
+.about .glyphicon{
+    top: 8px;
 }
 
 /* Services */
@@ -195,21 +204,20 @@ hr.large {
     width: 100%;
     height: 400px;
     color: #fff;
-    background: url(../images/callout.jpg) no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
 }
 
 /* Portfolio */
 
 .portfolio {
-    padding: 50px 0;
+    padding-top: 50px;
 }
 
 .portfolio-item {
     margin-bottom: 30px;
+}
+
+.portfolio-item a {
+    text-decoration: none;
 }
 
 .img-portfolio {
@@ -218,6 +226,21 @@ hr.large {
 
 .img-portfolio:hover {
     opacity: 0.8;
+}
+
+.star-sign {
+    color: rgb(243 , 146 , 0);
+}
+
+.portfolio .fyi {
+    text-align: left;
+    color: rgb(243 , 146 , 0);
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+.portfolio .fyi a {
+    font-style: italic;
 }
 
 /* Call to Action */

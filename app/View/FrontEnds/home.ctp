@@ -1,7 +1,22 @@
 <?php
+    echo $this->Html->script('masonry.pkgd.min');
+
 	$this->Get->create($data);
 	extract($data , EXTR_SKIP);
 ?>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var $container = $('.portfolio-row');
+
+        $container.imagesLoaded(function () {
+            $container.masonry({
+                itemSelector: '.port-box',
+                columnWidth: '.port-box',
+                transitionDuration: 0
+            });
+        });
+    });
+</script>
 <!-- Header -->
 <header id="top" class="header">
     <div class="text-vertical-center row">
@@ -25,7 +40,7 @@
                 <?php
                     $about = $this->Get->meta_details('about', 'pages');
                 ?>
-                <h2><?php echo $about['Entry']['title']; ?></h2>
+                <h2><span class="glyphicon glyphicon-cloud"></span>&nbsp;&nbsp;<?php echo $about['Entry']['title']; ?>&nbsp;&nbsp;<span class="glyphicon glyphicon-cloud"></span></h2>
                 <div class="lead"><?php echo $about['Entry']['description']; ?></div>
             </div>
         </div>
@@ -43,58 +58,28 @@
                 <h2>Our Services</h2>
                 <hr class="small">
                 <div class="row">
+                    <?php
+                        foreach ($services as $key => $value) 
+                        {
+                            // $detail_link = $imagePath.$value['Entry']['entry_type'].'/'.$value['Entry']['slug'];
+                            $detail_link = '#';
+                            ?>
                     <div class="col-md-3 col-sm-6">
                         <div class="service-item">
                             <span class="fa-stack fa-4x">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-cloud fa-stack-1x text-primary"></i>
-                        </span>
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-1x text-primary <?php echo $value['EntryMeta']['icon']; ?>"></i>
+                            </span>
                             <h4>
-                                <strong>Service Name</strong>
+                                <strong><?php echo $value['Entry']['title']; ?></strong>
                             </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <a href="#" class="btn btn-light">Learn More</a>
+                            <p><?php echo $value['Entry']['description']; ?></p>
+                            <a href="<?php echo $detail_link; ?>" class="btn btn-light">Learn More</a>
                         </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                            <span class="fa-stack fa-4x">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-compass fa-stack-1x text-primary"></i>
-                        </span>
-                            <h4>
-                                <strong>Service Name</strong>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <a href="#" class="btn btn-light">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                            <span class="fa-stack fa-4x">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-flask fa-stack-1x text-primary"></i>
-                        </span>
-                            <h4>
-                                <strong>Service Name</strong>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <a href="#" class="btn btn-light">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                            <span class="fa-stack fa-4x">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-shield fa-stack-1x text-primary"></i>
-                        </span>
-                            <h4>
-                                <strong>Service Name</strong>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <a href="#" class="btn btn-light">Learn More</a>
-                        </div>
-                    </div>
+                    </div>                            
+                            <?php
+                        }
+                    ?>                    
                 </div>
                 <!-- /.row (nested) -->
             </div>
@@ -106,9 +91,13 @@
 </section>
 
 <!-- Callout -->
-<aside class="callout">
+<?php
+    $sbanner = $this->Get->meta_details('services-banner', 'pages');
+    $imgLink = $this->Get->image_link(array('id' => $sbanner['Entry']['main_image']));
+?>
+<aside class="callout" style="background: url(<?php echo $imgLink['display']; ?>) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
     <div class="text-vertical-center">
-        <h1>Vertically Centered Text</h1>
+        <h1><?php echo $sbanner['Entry']['description']; ?></h1>
     </div>
 </aside>
 
@@ -119,38 +108,30 @@
             <div class="col-lg-10 col-lg-offset-1 text-center">
                 <h2>Our Work</h2>
                 <hr class="small">
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="row portfolio-row">
+                    <?php
+                        $firstdeveloper = $this->Get->meta_details(NULL , 'developer');
+
+                        foreach ($portfolio as $key => $value) 
+                        {
+                            $imgLink = $this->Get->image_link(array('id' => $value['Entry']['main_image']));
+                            ?>
+                    <div class="port-box col-md-4">
                         <div class="portfolio-item">
-                            <a href="#">
-                                <img class="img-portfolio img-responsive" src="<?php echo $imagePath; ?>images/portfolio-1.jpg">
+                            <a target="_blank" href="<?php echo $value['EntryMeta']['url_link']; ?>">
+                                <img class="img-portfolio img-responsive" src="<?php echo $imgLink['display']; ?>" alt="<?php echo $value['Entry']['title'].' '.$value['Entry']['entry_type']; ?>">
+                                
+                                <p class="description"><?php echo $value['Entry']['title'].($value['EntryMeta']['developer']==$firstdeveloper['Entry']['slug']?' <span class="star-sign">*</span>':''); ?></p>
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="portfolio-item">
-                            <a href="#">
-                                <img class="img-portfolio img-responsive" src="<?php echo $imagePath; ?>images/portfolio-2.jpg">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="portfolio-item">
-                            <a href="#">
-                                <img class="img-portfolio img-responsive" src="<?php echo $imagePath; ?>images/portfolio-3.jpg">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="portfolio-item">
-                            <a href="#">
-                                <img class="img-portfolio img-responsive" src="<?php echo $imagePath; ?>images/portfolio-4.jpg">
-                            </a>
-                        </div>
-                    </div>
+                            <?php
+                        }
+                    ?>
                 </div>
                 <!-- /.row (nested) -->
-                <a href="#" class="btn btn-dark">View More Items</a>
+                <a href="#" class="btn btn-dark">View More Items</a>                
+                <p class="fyi">*) Developed by <a target="_blank" href="<?php echo $firstdeveloper['EntryMeta']['url_link']; ?>"><?php echo $firstdeveloper['Entry']['title']; ?></a> whereas <a href="#">webomatics.net</a> doing programming phase.</p>
             </div>
             <!-- /.col-lg-10 -->
         </div>

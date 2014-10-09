@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 02, 2014 at 05:26 PM
+-- Generation Time: Oct 09, 2014 at 05:04 PM
 -- Server version: 5.1.37
 -- PHP Version: 5.3.0
 
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `cms_accounts` (
 --
 
 INSERT INTO `cms_accounts` (`id`, `user_id`, `role_id`, `username`, `email`, `password`, `last_login`, `created`, `created_by`, `modified`, `modified_by`) VALUES
-(1, 1, 1, 'admin', 'admin@yahoo.com', '169e781bd52860b584879cbe117085da596238f3', '2014-10-02 13:49:06', '2013-01-04 00:00:00', 1, '2013-01-04 00:00:00', 1);
+(1, 1, 1, 'admin', 'admin@yahoo.com', '169e781bd52860b584879cbe117085da596238f3', '2014-10-07 14:09:29', '2013-01-04 00:00:00', 1, '2013-01-04 00:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `cms_entries` (
   `lang_code` varchar(10) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
 
 --
 -- Dumping data for table `cms_entries`
@@ -82,7 +82,25 @@ CREATE TABLE IF NOT EXISTS `cms_entries` (
 INSERT INTO `cms_entries` (`id`, `entry_type`, `title`, `slug`, `description`, `main_image`, `parent_id`, `status`, `count`, `created`, `created_by`, `modified`, `modified_by`, `sort_order`, `lang_code`) VALUES
 (1, 'media', 'medium-logo', 'medium-logo', NULL, 0, 0, 1, 0, '2014-10-02 13:54:24', 1, '2014-10-02 13:54:24', 1, 1, 'en-1'),
 (2, 'pages', 'Home', 'home', '', 1, 0, 1, 0, '2014-10-02 13:55:41', 1, '2014-10-02 13:55:41', 1, 2, 'en-2'),
-(3, 'pages', 'Stylish Portfolio is the perfect theme for your next project!', 'about', '<p>This theme features some wonderful photography courtesy of <a href="http://join.deathtothestockphoto.com/" target="_blank">Death to the Stock Photo</a>.</p>\r\n', 0, 0, 1, 0, '2014-10-02 14:02:44', 1, '2014-10-02 14:03:36', 1, 3, 'en-3');
+(3, 'pages', 'Your Solution to your Online Marketing Business', 'about', '<p><span style="font-size:18px;">Do you own Trading Company, Survey Company, or maybe Online Shop Company? All of these major can be boosted up with <em><strong>website technology</strong></em>, for faster &amp; easier management (not like using pencil &amp; paper anymore).</span></p>\r\n', 0, 0, 1, 0, '2014-10-02 14:02:44', 1, '2014-10-07 15:41:23', 1, 3, 'en-3'),
+(4, 'media', 'best-website-marketing-developer', 'best-website-marketing-developer', NULL, 0, 0, 1, 0, '2014-10-08 09:21:04', 1, '2014-10-08 09:21:04', 1, 4, 'en-4'),
+(5, 'pages', 'Services Banner', 'services-banner', '', 4, 0, 1, 0, '2014-10-08 09:21:17', 1, '2014-10-08 09:21:17', 1, 5, 'en-5'),
+(6, 'services', 'Website', 'website', '<p>Using <em><strong><a href="http://en.wikipedia.org/wiki/Web_application_framework" target="_blank"><span style="color:#FFFFFF;">WAF</span></a></strong></em>&nbsp;&amp; <a href="http://en.wikipedia.org/wiki/HTML5" target="_blank"><em><strong><span style="color:#FFFFFF;">HTML5&nbsp;Technology</span></strong></em></a>, we guarantee your website are ready to be baked!</p>\r\n', 0, 0, 1, 0, '2014-10-08 11:15:04', 1, '2014-10-09 11:48:06', 1, 7, 'en-6'),
+(7, 'services', 'Analyst', 'analyst', '<p>At webomatics, we help you to analyze what kind of data &amp; system that suite your website.</p>\r\n', 0, 0, 1, 0, '2014-10-08 11:16:35', 1, '2014-10-09 11:09:56', 1, 8, 'en-7'),
+(8, 'services', 'Conceptor', 'conceptor', '<p>Do you have an idea for your&nbsp;website, but don&#39;t know what to do next?</p>\r\n', 0, 0, 1, 0, '2014-10-08 11:16:43', 1, '2014-10-09 11:54:44', 1, 9, 'en-8'),
+(9, 'services', 'Marketing', 'marketing', '<p>Attract&nbsp;business market to your website traffic with <em><strong><a href="http://en.wikipedia.org/wiki/Search_engine_optimization" target="_blank"><span style="color:#FFFFFF;">SEO Technology</span></a></strong></em>.</p>\r\n', 0, 0, 1, 0, '2014-10-08 11:16:52', 1, '2014-10-09 11:51:30', 1, 6, 'en-9'),
+(10, 'media', 'logo', 'logo', NULL, 0, 0, 1, 0, '2014-10-09 14:22:51', 1, '2014-10-09 14:22:51', 1, 10, 'en-10'),
+(11, 'developer', 'Creazi Citra Cemerlang', 'creazi-citra-cemerlang', '', 10, 0, 1, 0, '2014-10-09 14:22:57', 1, '2014-10-09 14:22:57', 1, 11, 'en-11'),
+(12, 'media', 'portfolio-1', 'portfolio-1', NULL, 0, 0, 1, 0, '2014-10-09 14:23:41', 1, '2014-10-09 14:23:41', 1, 12, 'en-12'),
+(13, 'media', 'portfolio-2', 'portfolio-2', NULL, 0, 0, 1, 0, '2014-10-09 14:23:41', 1, '2014-10-09 14:23:41', 1, 13, 'en-13'),
+(14, 'media', 'portfolio-4', 'portfolio-4', NULL, 0, 0, 1, 0, '2014-10-09 14:23:42', 1, '2014-10-09 14:23:42', 1, 14, 'en-14'),
+(15, 'media', 'portfolio-3', 'portfolio-3', NULL, 0, 0, 1, 0, '2014-10-09 14:23:42', 1, '2014-10-09 14:23:42', 1, 15, 'en-15'),
+(26, 'portfolio', 'I Ricchi Jewellery', 'i-ricchi-jewellery-1', '', 25, 0, 1, 0, '2014-10-09 17:01:57', 1, '2014-10-09 17:02:44', 1, 23, 'en-26'),
+(23, 'portfolio', 'Maxipro Indonesia', 'maxipro-indonesia', '', 22, 0, 1, 0, '2014-10-09 15:33:52', 1, '2014-10-09 17:02:44', 1, 26, 'en-23'),
+(22, 'media', 'portfolio_maxipro', 'portfolio-maxipro', NULL, 0, 0, 1, 0, '2014-10-09 15:31:10', 1, '2014-10-09 15:31:10', 1, 22, 'en-22'),
+(24, 'portfolio', 'Igor`s Pastry', 'igor-s-pastry', '', 21, 0, 1, 0, '2014-10-09 15:34:14', 1, '2014-10-09 17:02:44', 1, 24, 'en-24'),
+(25, 'media', 'I Ricchi Jewellery', 'i-ricchi-jewellery', NULL, 0, 0, 1, 0, '2014-10-09 16:48:36', 1, '2014-10-09 16:48:36', 1, 25, 'en-25'),
+(21, 'media', 'igors-pastry', 'igors-pastry', NULL, 0, 0, 1, 0, '2014-10-09 14:34:47', 1, '2014-10-09 14:34:47', 1, 21, 'en-21');
 
 -- --------------------------------------------------------
 
@@ -96,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `cms_entry_metas` (
   `key` varchar(500) NOT NULL,
   `value` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=73 ;
 
 --
 -- Dumping data for table `cms_entry_metas`
@@ -104,7 +122,35 @@ CREATE TABLE IF NOT EXISTS `cms_entry_metas` (
 
 INSERT INTO `cms_entry_metas` (`id`, `entry_id`, `key`, `value`) VALUES
 (1, 1, 'image_type', 'png'),
-(2, 1, 'image_size', '484348');
+(2, 1, 'image_size', '484348'),
+(8, 4, 'image_size', '6202469'),
+(7, 4, 'image_type', 'png'),
+(35, 9, 'form-icon', 'fa-users'),
+(22, 7, 'form-icon', 'fa-lightbulb-o'),
+(36, 8, 'form-icon', 'fa-puzzle-piece'),
+(34, 6, 'form-icon', 'fa-laptop'),
+(37, 10, 'image_type', 'png'),
+(38, 10, 'image_size', '37514'),
+(39, 11, 'form-url_link', 'http://www.creazi.co.id'),
+(40, 12, 'image_type', 'jpg'),
+(41, 12, 'image_size', '20674'),
+(42, 13, 'image_type', 'jpg'),
+(43, 13, 'image_size', '35894'),
+(44, 14, 'image_type', 'jpg'),
+(45, 14, 'image_size', '20898'),
+(46, 15, 'image_type', 'jpg'),
+(47, 15, 'image_size', '38184'),
+(66, 24, 'form-developer', 'creazi-citra-cemerlang'),
+(62, 22, 'image_type', 'png'),
+(63, 22, 'image_size', '3413650'),
+(64, 23, 'form-url_link', 'http://www.maxipro.co.id'),
+(65, 24, 'form-url_link', 'http://www.igors-pastry.com'),
+(57, 21, 'image_size', '1200594'),
+(56, 21, 'image_type', 'png'),
+(70, 25, 'image_size', '561244'),
+(69, 25, 'image_type', 'png'),
+(71, 26, 'form-url_link', 'http://www.iricchijewellery.com'),
+(72, 26, 'form-developer', 'creazi-citra-cemerlang');
 
 -- --------------------------------------------------------
 
@@ -188,7 +234,7 @@ CREATE TABLE IF NOT EXISTS `cms_types` (
   `modified_by` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `cms_types`
@@ -197,7 +243,10 @@ CREATE TABLE IF NOT EXISTS `cms_types` (
 INSERT INTO `cms_types` (`id`, `name`, `slug`, `description`, `parent_id`, `count`, `created`, `created_by`, `modified`, `modified_by`) VALUES
 (1, 'Media Library', 'media', 'All media image is stored here.', 0, 0, '2013-01-15 03:35:14', 1, '2013-01-15 03:35:14', 1),
 (2, 'Gallery', 'gallery', 'Our Gallery Projects.', 0, 0, '2013-01-15 03:37:26', 1, '2013-01-15 03:37:26', 1),
-(3, 'Slideshow', 'slideshow', 'Home slideshow with details.', 0, 0, '2014-09-03 10:35:08', 1, '2014-09-03 10:35:08', 1);
+(3, 'Slideshow', 'slideshow', 'Home slideshow with details.', 0, 0, '2014-09-03 10:35:08', 1, '2014-09-03 10:35:08', 1),
+(4, 'Services', 'services', '', 0, 0, '2014-10-08 11:14:25', 1, '2014-10-08 11:23:32', 1),
+(5, 'Portfolio', 'portfolio', 'Webomatics Website Portfolio', 0, 0, '2014-10-09 14:16:09', 1, '2014-10-09 14:16:09', 1),
+(6, 'Developer', 'developer', 'Outsource Project Developer.', 0, 0, '2014-10-09 14:16:52', 1, '2014-10-09 14:21:00', 1);
 
 -- --------------------------------------------------------
 
@@ -214,14 +263,18 @@ CREATE TABLE IF NOT EXISTS `cms_type_metas` (
   `validation` text,
   `instruction` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `cms_type_metas`
 --
 
 INSERT INTO `cms_type_metas` (`id`, `type_id`, `key`, `value`, `input_type`, `validation`, `instruction`) VALUES
-(1, 3, 'form-url_link', '', 'text', 'is_url|', 'Example: http://www.yourdomain.com');
+(1, 3, 'form-url_link', '', 'text', 'is_url|', 'Example: http://www.yourdomain.com'),
+(2, 4, 'form-icon', '', 'text', '', 'icon symbol for services identity.'),
+(3, 5, 'form-url_link', '', 'text', 'not_empty|is_url|', 'Example: http://www.yourdomain.com'),
+(4, 5, 'form-developer', '', 'browse', '', 'Ignore this field if you develop this project yourself.'),
+(5, 6, 'form-url_link', '', 'text', 'is_url|', 'Example: http://www.yourdomain.com');
 
 -- --------------------------------------------------------
 

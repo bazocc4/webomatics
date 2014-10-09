@@ -153,9 +153,13 @@ class EntriesController extends AppController {
 
 				if($myEntrySlug == 'home')
 				{
-					// load slider data !!
-					$slideshow = $this->_admin_default( $this->Type->findBySlug('slideshow') , 0 , NULL , NULL , NULL ,NULL,NULL,NULL, NULL , 'manualset');
-					$this->set('slideshow', $slideshow['myList']);
+					// load services data !!
+					$services = $this->_admin_default( $this->Type->findBySlug('services') , 0 , NULL , NULL , NULL ,NULL,NULL,NULL, NULL , 'manualset');
+					$this->set('services', $services['myList']);
+
+					// load portfolio data !!
+					$portfolio = $this->_admin_default( $this->Type->findBySlug('portfolio') , 0 , NULL , NULL , NULL ,NULL,NULL,NULL, NULL , 'manualset');
+					$this->set('portfolio', $portfolio['myList']);
 				}
 				else if($myEntrySlug == 'search')
 				{
