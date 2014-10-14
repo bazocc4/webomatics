@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 09, 2014 at 05:04 PM
+-- Generation Time: Oct 14, 2014 at 11:22 AM
 -- Server version: 5.1.37
 -- PHP Version: 5.3.0
 
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `cms_accounts` (
 --
 
 INSERT INTO `cms_accounts` (`id`, `user_id`, `role_id`, `username`, `email`, `password`, `last_login`, `created`, `created_by`, `modified`, `modified_by`) VALUES
-(1, 1, 1, 'admin', 'admin@yahoo.com', '169e781bd52860b584879cbe117085da596238f3', '2014-10-07 14:09:29', '2013-01-04 00:00:00', 1, '2013-01-04 00:00:00', 1);
+(1, 1, 1, 'admin', 'admin@yahoo.com', '169e781bd52860b584879cbe117085da596238f3', '2014-10-14 11:06:33', '2013-01-04 00:00:00', 1, '2013-01-04 00:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `cms_entries` (
   `lang_code` varchar(10) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=33 ;
 
 --
 -- Dumping data for table `cms_entries`
@@ -90,7 +90,7 @@ INSERT INTO `cms_entries` (`id`, `entry_type`, `title`, `slug`, `description`, `
 (8, 'services', 'Conceptor', 'conceptor', '<p>Do you have an idea for your&nbsp;website, but don&#39;t know what to do next?</p>\r\n', 0, 0, 1, 0, '2014-10-08 11:16:43', 1, '2014-10-09 11:54:44', 1, 9, 'en-8'),
 (9, 'services', 'Marketing', 'marketing', '<p>Attract&nbsp;business market to your website traffic with <em><strong><a href="http://en.wikipedia.org/wiki/Search_engine_optimization" target="_blank"><span style="color:#FFFFFF;">SEO Technology</span></a></strong></em>.</p>\r\n', 0, 0, 1, 0, '2014-10-08 11:16:52', 1, '2014-10-09 11:51:30', 1, 6, 'en-9'),
 (10, 'media', 'logo', 'logo', NULL, 0, 0, 1, 0, '2014-10-09 14:22:51', 1, '2014-10-09 14:22:51', 1, 10, 'en-10'),
-(11, 'developer', 'Creazi Citra Cemerlang', 'creazi-citra-cemerlang', '', 10, 0, 1, 0, '2014-10-09 14:22:57', 1, '2014-10-09 14:22:57', 1, 11, 'en-11'),
+(11, 'developer', 'PT. Creazi Citra Cemerlang', 'creazi-citra-cemerlang', '', 10, 0, 1, 0, '2014-10-09 14:22:57', 1, '2014-10-13 13:39:47', 1, 11, 'en-11'),
 (12, 'media', 'portfolio-1', 'portfolio-1', NULL, 0, 0, 1, 0, '2014-10-09 14:23:41', 1, '2014-10-09 14:23:41', 1, 12, 'en-12'),
 (13, 'media', 'portfolio-2', 'portfolio-2', NULL, 0, 0, 1, 0, '2014-10-09 14:23:41', 1, '2014-10-09 14:23:41', 1, 13, 'en-13'),
 (14, 'media', 'portfolio-4', 'portfolio-4', NULL, 0, 0, 1, 0, '2014-10-09 14:23:42', 1, '2014-10-09 14:23:42', 1, 14, 'en-14'),
@@ -100,7 +100,13 @@ INSERT INTO `cms_entries` (`id`, `entry_type`, `title`, `slug`, `description`, `
 (22, 'media', 'portfolio_maxipro', 'portfolio-maxipro', NULL, 0, 0, 1, 0, '2014-10-09 15:31:10', 1, '2014-10-09 15:31:10', 1, 22, 'en-22'),
 (24, 'portfolio', 'Igor`s Pastry', 'igor-s-pastry', '', 21, 0, 1, 0, '2014-10-09 15:34:14', 1, '2014-10-09 17:02:44', 1, 24, 'en-24'),
 (25, 'media', 'I Ricchi Jewellery', 'i-ricchi-jewellery', NULL, 0, 0, 1, 0, '2014-10-09 16:48:36', 1, '2014-10-09 16:48:36', 1, 25, 'en-25'),
-(21, 'media', 'igors-pastry', 'igors-pastry', NULL, 0, 0, 1, 0, '2014-10-09 14:34:47', 1, '2014-10-09 14:34:47', 1, 21, 'en-21');
+(21, 'media', 'igors-pastry', 'igors-pastry', NULL, 0, 0, 1, 0, '2014-10-09 14:34:47', 1, '2014-10-09 14:34:47', 1, 21, 'en-21'),
+(27, 'media', 'Paloma', 'paloma', NULL, 0, 0, 1, 0, '2014-10-13 11:54:27', 1, '2014-10-13 11:54:27', 1, 27, 'en-27'),
+(28, 'portfolio', 'Beautiful Paloma', 'beautiful-paloma', '', 27, 0, 1, 0, '2014-10-13 11:54:41', 1, '2014-10-13 11:54:41', 1, 28, 'en-28'),
+(29, 'media', 'Ayobaking - fun baking craft', 'ayobaking-fun-baking-craft', NULL, 0, 0, 1, 0, '2014-10-13 14:23:18', 1, '2014-10-13 14:23:18', 1, 29, 'en-29'),
+(30, 'portfolio', 'Ayobaking', 'ayobaking', '', 29, 0, 1, 0, '2014-10-13 14:23:45', 1, '2014-10-13 14:23:45', 1, 30, 'en-30'),
+(31, 'media', 'insightcode', 'insightcode', NULL, 0, 0, 1, 0, '2014-10-14 10:17:05', 1, '2014-10-14 10:17:05', 1, 31, 'en-31'),
+(32, 'portfolio', 'Insight Code', 'insight-code', '', 31, 0, 1, 0, '2014-10-14 10:17:21', 1, '2014-10-14 10:17:21', 1, 32, 'en-32');
 
 -- --------------------------------------------------------
 
@@ -114,24 +120,24 @@ CREATE TABLE IF NOT EXISTS `cms_entry_metas` (
   `key` varchar(500) NOT NULL,
   `value` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=73 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=109 ;
 
 --
 -- Dumping data for table `cms_entry_metas`
 --
 
 INSERT INTO `cms_entry_metas` (`id`, `entry_id`, `key`, `value`) VALUES
-(1, 1, 'image_type', 'png'),
-(2, 1, 'image_size', '484348'),
-(8, 4, 'image_size', '6202469'),
-(7, 4, 'image_type', 'png'),
+(108, 1, 'image_size', '25393'),
+(107, 1, 'image_type', 'png'),
+(106, 4, 'image_size', '882233'),
+(105, 4, 'image_type', 'png'),
 (35, 9, 'form-icon', 'fa-users'),
 (22, 7, 'form-icon', 'fa-lightbulb-o'),
 (36, 8, 'form-icon', 'fa-puzzle-piece'),
 (34, 6, 'form-icon', 'fa-laptop'),
 (37, 10, 'image_type', 'png'),
 (38, 10, 'image_size', '37514'),
-(39, 11, 'form-url_link', 'http://www.creazi.co.id'),
+(77, 11, 'form-url_link', 'http://www.creazi.co.id'),
 (40, 12, 'image_type', 'jpg'),
 (41, 12, 'image_size', '20674'),
 (42, 13, 'image_type', 'jpg'),
@@ -141,16 +147,27 @@ INSERT INTO `cms_entry_metas` (`id`, `entry_id`, `key`, `value`) VALUES
 (46, 15, 'image_type', 'jpg'),
 (47, 15, 'image_size', '38184'),
 (66, 24, 'form-developer', 'creazi-citra-cemerlang'),
-(62, 22, 'image_type', 'png'),
-(63, 22, 'image_size', '3413650'),
+(100, 22, 'image_size', '66608'),
+(99, 22, 'image_type', 'png'),
 (64, 23, 'form-url_link', 'http://www.maxipro.co.id'),
 (65, 24, 'form-url_link', 'http://www.igors-pastry.com'),
-(57, 21, 'image_size', '1200594'),
-(56, 21, 'image_type', 'png'),
-(70, 25, 'image_size', '561244'),
-(69, 25, 'image_type', 'png'),
+(95, 21, 'image_type', 'png'),
+(101, 25, 'image_type', 'png'),
 (71, 26, 'form-url_link', 'http://www.iricchijewellery.com'),
-(72, 26, 'form-developer', 'creazi-citra-cemerlang');
+(72, 26, 'form-developer', 'creazi-citra-cemerlang'),
+(75, 28, 'form-url_link', 'http://beautifulpaloma.com'),
+(76, 28, 'form-developer', 'creazi-citra-cemerlang'),
+(82, 30, 'form-url_link', 'http://ayobaking.com'),
+(83, 30, 'form-developer', 'creazi-citra-cemerlang'),
+(103, 27, 'image_type', 'png'),
+(93, 29, 'image_type', 'png'),
+(90, 32, 'form-url_link', 'http://insight-code.com'),
+(97, 31, 'image_type', 'png'),
+(94, 29, 'image_size', '271240'),
+(96, 21, 'image_size', '296774'),
+(98, 31, 'image_size', '83790'),
+(102, 25, 'image_size', '110693'),
+(104, 27, 'image_size', '350780');
 
 -- --------------------------------------------------------
 
@@ -195,7 +212,7 @@ CREATE TABLE IF NOT EXISTS `cms_settings` (
 INSERT INTO `cms_settings` (`id`, `key`, `value`) VALUES
 (1, 'title', 'Webomatics'),
 (2, 'tagline', 'website, business, technology, informatic, marketing, inventory, online, simple, easy, survey'),
-(3, 'description', 'where the Website - Technology - Informatics boost your business.'),
+(3, 'description', 'where the <i class=''star-sign''>Website, Technology & Informatics</i> boost your business.'),
 (4, 'date_format', 'd F Y'),
 (5, 'time_format', 'h:i A'),
 (6, 'header', ''),
