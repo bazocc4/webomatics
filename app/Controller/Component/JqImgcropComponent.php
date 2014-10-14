@@ -217,7 +217,7 @@ class JqImgcropComponent extends Component {
 	    case 'bmp': imagewbmp($new, $dst); break;
 	    case 'gif': imagegif($new, $dst); break;
 	    case 'jpg': imagejpeg($new, $dst , 90); break;
-	    case 'png': imagepng($new, $dst,0); break;
+	    case 'png': imagepng($new, $dst,9); break;
 	  }
 	  
 	  chmod($dst, 0777);
@@ -390,7 +390,7 @@ class JqImgcropComponent extends Component {
 	    case 'bmp': imagewbmp($new, $dst); break;
 	    case 'gif': imagegif($new, $dst); break;
 	    case 'jpg': imagejpeg($new, $dst , 90); break;
-	    case 'png': imagepng($new, $dst,0); break;
+	    case 'png': imagepng($new, $dst,9); break;
 	  }
 	  
 	  chmod($dst, 0777);
