@@ -153,6 +153,12 @@ class EntriesController extends AppController {
 
 				if($myEntrySlug == 'home')
 				{
+					// if submit contact form !!
+	            	if(isset($_POST['submitcontact']))
+					{
+						$this->submit_contact();
+					}
+
 					// load services data !!
 					$services = $this->_admin_default( $this->Type->findBySlug('services') , 0 , NULL , NULL , NULL ,NULL,NULL,NULL, NULL , 'manualset');
 					$this->set('services', $services['myList']);
@@ -298,7 +304,60 @@ class EntriesController extends AppController {
 		$this->onlyActiveEntries = FALSE;
 		$this->setTitle();
 		$this->render($this->frontEndFolder.$myRenderFile);
-	}		
+	}
+
+	function submit_contact()
+    {
+    	$result = array();
+        $valid = true;
+
+        # check reCAPTCHA response!
+		App::import('Vendor', 'recaptchalib');
+		$resp = recaptcha_check_answer (RECAPTCHA_PRIVATE_KEY,
+            $_SERVER["REMOTE_ADDR"],
+            $_POST["recaptcha_challenge_field"],
+            $_POST["recaptcha_response_field"]);
+
+        if (!$resp->is_valid) 
+        {
+        	# set the error code so that we can display it
+            $this->set('recaptcha_error' , $resp->error );
+            $valid = false;
+        }
+        
+        $result['success'] = 0;
+        if($valid)
+        {
+        	// prepare the email...
+			App::uses('CakeEmail', 'Network/Email');
+		    $Email = new CakeEmail();
+
+		    $mybody = "<strong>Message from ".$this->mySetting['title']." Website Guest</strong><br/><br/>";
+            $mybody .= "Name : ".$_POST['namecontact']."<br/>";
+            $mybody .= "<br/>Content :<br/>".$_POST['pesancontact']."<br/>";
+
+			try{
+				if( $Email->from(array($_POST['emailcontact']=>$_POST['namecontact']))
+			          ->to(array($this->mySetting['custom-email_contact']=>$this->mySetting['title']))
+			          ->subject($this->mySetting['title']." - Contact Message")
+			          ->emailFormat('html')
+			          ->template('default','default')
+			          ->send($mybody) )
+				{
+					$result['success'] = 1;
+				}
+				else // Failure, without any exceptions
+				{
+					$result['success'] = -1;
+				}
+			} catch(Exception $e){
+				// Failure, with exception
+				$result['success'] = -2;
+			}
+        }
+        
+        $this->set('contact', $result);
+    }		
 	
 	function change_status($id, $status = NULL , $localcall = NULL)
 	{

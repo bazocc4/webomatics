@@ -56,7 +56,7 @@
 			echo $this->Html->css('bootstrap-3');
 
 			echo $this->Html->css('smoothness/jquery-ui-1.8.18.custom');
-			echo $this->Html->css('colorbox');
+			// echo $this->Html->css('colorbox');
 			
 			// custom style !!
 			echo $this->Html->css('style');
@@ -72,9 +72,9 @@
 			echo $this->Html->script('jquery-ui-timepicker-addon');
 
 			echo $this->Html->script('jquery.imagesloaded');			
-			echo $this->Html->script('jquery.colorbox');
+			// echo $this->Html->script('jquery.colorbox');
 			// use this script to make colorbox responsive !!
-			echo $this->Html->script('colorbox_resize');
+			// echo $this->Html->script('colorbox_resize');
 
 			// bootstrap script !!
 			echo $this->Html->script('bootstrap.min-3');
@@ -135,7 +135,7 @@
 		            <a href="#portfolio">Portfolio</a>
 		        </li>
 		        <li>
-		            <a href="#footer">Contact</a>
+		            <a href="#contact-area">Contact</a>
 		        </li>
 		    </ul>
 		</nav>
@@ -145,13 +145,17 @@
 		    <div class="container" id="footer">
 		        <div class="row">
 		        	<div class="col-lg-2 col-lg-offset-1 col-md-3">
-						<i class="fa fa-phone fa-fw"></i> <?php echo $mySetting['custom-phone_contact']; ?>
+						<i class="fa fa-phone fa-fw"></i> <a href="tel:+<?php echo str_replace('-', '', get_slug($mySetting['custom-phone_contact']) ); ?>"><?php echo $mySetting['custom-phone_contact']; ?></a>
 					</div>
 					<div class="col-lg-3 col-md-3">
 						<i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:<?php echo $mySetting['custom-email_contact']; ?>"><?php echo $mySetting['custom-email_contact']; ?></a>
 					</div>
 					<div class="col-lg-3 col-md-3">
-						<p class="text-muted">Copyright &copy; <?php echo $mySetting['title']; ?> 2014</p>
+						<p class="text-muted">
+							Copyright &copy; <?php echo $mySetting['title']; ?> 2014
+							<br>
+							All rights reserved.
+						</p>
 					</div>
 					<div class="col-lg-3 col-md-3">
 						<hr class="medium visible-sm visible-xs">
@@ -163,7 +167,7 @@
 					            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
 					        </li>
 					        <li>
-					            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+					            <a href="#"><i class="fa fa-google-plus fa-fw fa-3x"></i></a>
 					        </li>
 					    </ul>
 					</div>

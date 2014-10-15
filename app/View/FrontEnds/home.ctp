@@ -1,10 +1,15 @@
 <?php
+    App::import('Vendor', 'recaptchalib');
     echo $this->Html->script('masonry.pkgd.min');
 
 	$this->Get->create($data);
 	extract($data , EXTR_SKIP);
 ?>
 <script type="text/javascript">
+    var RecaptchaOptions = {
+        theme : 'white'
+    };
+
     $(document).ready(function(){
         var $container = $('.portfolio-row');
 
@@ -14,6 +19,11 @@
                 columnWidth: '.port-box',
                 transitionDuration: 0
             });
+        });
+
+        $('a.view-more-items').click(function(e){
+            e.preventDefault();
+            alert('Our next projects will coming very soon :)');
         });
     });
 </script>
@@ -62,7 +72,7 @@
                         foreach ($services as $key => $value) 
                         {
                             // $detail_link = $imagePath.$value['Entry']['entry_type'].'/'.$value['Entry']['slug'];
-                            $detail_link = '#';
+                            $detail_link = '#contact-area';
                             ?>
                     <div class="col-md-3 col-sm-6">
                         <div class="service-item">
@@ -90,15 +100,17 @@
     <!-- /.container -->
 </section>
 
-<!-- Callout -->
+<!-- Service Banner -->
 <?php
     $sbanner = $this->Get->meta_details('services-banner', 'pages');
     $imgLink = $this->Get->image_link(array('id' => $sbanner['Entry']['main_image']));
 ?>
 <aside class="callout" style="background: url(<?php echo $imgLink['display']; ?>) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
-    <div class="text-vertical-center">
-        <h1><?php echo $sbanner['Entry']['description']; ?></h1>
-    </div>
+    <div class="row text-vertical-center">
+        <div class="col-xs-offset-2 col-xs-8 banner-desc">
+            <?php echo $sbanner['Entry']['description']; ?>
+        </div>
+    </div>    
 </aside>
 
 <!-- Portfolio -->
@@ -130,8 +142,8 @@
                     ?>
                 </div>
                 <!-- /.row (nested) -->
-                <a href="#" class="btn btn-dark">View More Items</a>                
-                <p class="fyi">*) Developed by <a target="_blank" href="<?php echo $firstdeveloper['EntryMeta']['url_link']; ?>"><?php echo $firstdeveloper['Entry']['title']; ?></a> whereas <a href="#">webomatics.net</a> doing programming phase.</p>
+                <a href="#" class="btn btn-dark view-more-items">View More Items</a>
+                <p class="fyi">*) Developed by <a target="_blank" href="<?php echo $firstdeveloper['EntryMeta']['url_link']; ?>"><?php echo $firstdeveloper['Entry']['title']; ?></a> whereas <a href="#top">webomatics.net</a> doing programming phase.</p>
             </div>
             <!-- /.col-lg-10 -->
         </div>
@@ -140,15 +152,79 @@
     <!-- /.container -->
 </section>
 
-<!-- Call to Action -->
-<aside class="call-to-action bg-primary">
+<!-- Contact -->
+<?php
+    $contact = $this->Get->meta_details('contact-us', 'pages');
+    $imgLink = $this->Get->image_link(array('id' => $contact['Entry']['main_image']));
+?>
+<aside class="call-to-action bg-primary" id="contact-area" style="background: url(<?php echo $imgLink['display']; ?>) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h3>The buttons below are impossible to resist.</h3>
-                <a href="#" class="btn btn-lg btn-light">Click Me!</a>
-                <a href="#" class="btn btn-lg btn-dark">Look at Me!</a>
+                <h2><?php echo $contact['Entry']['title']; ?></h2>
+                <h5><?php echo $contact['Entry']['description']; ?></h5>
+                <hr class="small">
+                <form action="#" method="POST" role="form" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-4 col-md-offset-2 col-sm-5 col-sm-offset-1">
+                            <div class="form-group">
+                                <input placeholder="[Fullname]" REQUIRED type="text" class="form-control input-lg" name="namecontact" value="<?php echo ($contact['success'] == 1?'':$_POST['namecontact']); ?>">
+                            </div>                            
+                        </div>
+                        <div class="col-md-4 col-sm-5">
+                            <div class="form-group">
+                                <input placeholder="[E-mail]" REQUIRED type="email" class="form-control input-lg" name="emailcontact" value="<?php echo ($contact['success'] == 1?'':$_POST['emailcontact']); ?>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                            <div class="form-group">
+                                <textarea placeholder="[Message]" style="resize: none;" REQUIRED name="pesancontact" class="form-control" rows="5"><?php echo ($contact['success'] == 1?'':$_POST['pesancontact']); ;?></textarea>
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                            <div class="form-group">
+                                <?php echo recaptcha_get_html(RECAPTCHA_PUBLIC_KEY, $recaptcha_error); ?>
+                                <br>
+                                <button type="submit" class="btn btn-lg btn-light" name="submitcontact">SEND MESSAGE</button>
+                                <button type="reset" class="btn btn-lg btn-dark">RESET</button>
+                            </div>                            
+                        </div>
+                    </div>                    
+                </form>
             </div>
         </div>
     </div>
 </aside>
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        <?php if(isset($_POST['submitcontact'])): ?>
+            var endnote = '\n\nbest regards,\n<?php echo $mySetting['title']; ?>';
+            <?php
+                if($contact['success'] == 1)
+                {
+                    ?>
+                alert('Thank you for your message.\nWe will evaluate and contact back to you soon.'+endnote);
+                    <?php
+                }
+                else
+                {
+                    ?>
+            <?php if($contact['success'] == 0): ?>
+                alert('Invalid CAPTCHA challenge (<?php echo $recaptcha_error; ?>)\nPlease try again.');
+            <?php elseif($contact['success'] == -1): ?>
+                alert('Send Message Failed.\nPlease try again.');
+            <?php elseif($contact['success'] == -2): ?>
+                alert('Failed to connect to mailserver.\nPlease check your connection first.');
+            <?php endif; ?>
+            $('a[href=#contact-area]').click(); // focus to contact area...
+                    <?php
+                }
+            ?>
+        <?php endif; ?>
+    });
+</script>
