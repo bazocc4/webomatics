@@ -17,27 +17,25 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
  
-if(is_array($data)) extract($data , EXTR_SKIP); 
+$this->Get->create();
+$data = $this->Get->getData();
+extract($data , EXTR_SKIP);
+
+// use Full Path ...
+$imagePath = $this->Get->host_name(); 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-
+<!DOCTYPE html>
 <html>
-<head>
-	<title><?php echo $title_for_layout;?></title>
-</head>
-
-<body>
-	<div style="font-family: Garamond,serif; color: #000000; font-size: 16px;">
-	<?php echo $content_for_layout;?>
-	<?php if(!empty($mySetting['title'])): ?>
-	<br/>
-	<br/>
-	<p>
-		best regards,<br/>
-		<strong><?php echo $mySetting['title']; ?></strong><br/>
-		<span style="font-style: italic;"><?php echo $mySetting['description']; ?></span>
-	</p>
-	<?php endif; ?>
-	</div>
-</body>
+	<body>
+		<?php echo $content_for_layout;?>
+		<?php if(!empty($mySetting['title'])): ?>
+		<br/>
+		<br/>
+		<p>
+			best regards,<br/>
+			<strong><a style="text-decoration: none;" href="<?php echo $imagePath; ?>"><?php echo $mySetting['title']; ?></a></strong><br/>
+			<span style="font-style: italic;"><?php echo $mySetting['description']; ?></span>
+		</p>
+		<?php endif; ?>
+	</body>
 </html>

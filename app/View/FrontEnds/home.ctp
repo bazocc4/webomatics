@@ -154,15 +154,15 @@
 
 <!-- Contact -->
 <?php
-    $contact = $this->Get->meta_details('contact-us', 'pages');
-    $imgLink = $this->Get->image_link(array('id' => $contact['Entry']['main_image']));
+    $contactpages = $this->Get->meta_details('contact-us', 'pages');
+    $imgLink = $this->Get->image_link(array('id' => $contactpages['Entry']['main_image']));
 ?>
 <aside class="call-to-action bg-primary" id="contact-area" style="background: url(<?php echo $imgLink['display']; ?>) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2><?php echo $contact['Entry']['title']; ?></h2>
-                <h5><?php echo $contact['Entry']['description']; ?></h5>
+                <h2><?php echo $contactpages['Entry']['title']; ?></h2>
+                <h5><?php echo $contactpages['Entry']['description']; ?></h5>
                 <hr class="small">
                 <form action="#" method="POST" role="form" enctype="multipart/form-data">
                     <div class="row">
@@ -213,15 +213,26 @@
                 }
                 else
                 {
-                    ?>
-            <?php if($contact['success'] == 0): ?>
+                    if(!empty($recaptcha_error))
+                    {
+                        ?>
                 alert('Invalid CAPTCHA challenge (<?php echo $recaptcha_error; ?>)\nPlease try again.');
-            <?php elseif($contact['success'] == -1): ?>
-                alert('Send Message Failed.\nPlease try again.');
-            <?php elseif($contact['success'] == -2): ?>
+                        <?php
+                    }
+                    else if($contact['success'] == -2)
+                    {
+                        ?>
                 alert('Failed to connect to mailserver.\nPlease check your connection first.');
-            <?php endif; ?>
-            $('a[href=#contact-area]').click(); // focus to contact area...
+                        <?php
+                    }
+                    else
+                    {
+                        ?>
+                alert('Send Message Failed.\nPlease try again.');
+                        <?php
+                    }
+                    ?>
+                $('a[href=#contact-area]').click(); // focus to contact area...
                     <?php
                 }
             ?>
