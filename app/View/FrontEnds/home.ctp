@@ -9,24 +9,32 @@
     var RecaptchaOptions = {
         theme : 'white'
     };
-
-    $(document).ready(function(){
-        var $container = $('.portfolio-row');
-
-        $container.imagesLoaded(function () {
-            $container.masonry({
-                itemSelector: '.port-box',
-                columnWidth: '.port-box',
-                transitionDuration: 0
-            });
-        });
-
-        $('a.view-more-items').click(function(e){
-            e.preventDefault();
-            alert('Our next projects will coming very soon :)');
-        });
-    });
 </script>
+<!-- Navigation -->
+<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+<nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+        <li class="sidebar-brand">
+            <a href="#top"><?php echo $mySetting['title']; ?></a>
+        </li>
+        <li>
+            <a href="#top">Home</a>
+        </li>
+        <li>
+            <a href="#about">About Us</a>
+        </li>
+        <li>
+            <a href="#services">Services</a>
+        </li>
+        <li>
+            <a href="#portfolio">Portfolio</a>
+        </li>
+        <li>
+            <a href="#contact-area">Contact</a>
+        </li>
+    </ul>
+</nav>
 <!-- Header -->
 <header id="top" class="header">
     <div class="text-vertical-center row">
@@ -71,8 +79,8 @@
                     <?php
                         foreach ($services as $key => $value) 
                         {
-                            // $detail_link = $imagePath.$value['Entry']['entry_type'].'/'.$value['Entry']['slug'];
-                            $detail_link = '#contact-area';
+                            $detail_link = $imagePath.$value['Entry']['entry_type'].'/#'.$value['Entry']['slug'];
+                            // $detail_link = '#contact-area';
                             ?>
                     <div class="col-md-3 col-sm-6">
                         <div class="service-item">
@@ -83,7 +91,7 @@
                             <h4>
                                 <strong><?php echo $value['Entry']['title']; ?></strong>
                             </h4>
-                            <p><?php echo $value['Entry']['description']; ?></p>
+                            <p><?php echo $value['EntryMeta']['teaser']; ?></p>
                             <a href="<?php echo $detail_link; ?>" class="btn btn-light">Learn More</a>
                         </div>
                     </div>                            
@@ -105,7 +113,7 @@
     $sbanner = $this->Get->meta_details('services-banner', 'pages');
     $imgLink = $this->Get->image_link(array('id' => $sbanner['Entry']['main_image']));
 ?>
-<aside class="callout" style="background: url(<?php echo $imgLink['display']; ?>) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
+<aside data-toggle="tooltip" data-placement="auto" alt="service-area" title="Click For More Services" id="service-banner" class="callout" style="background: url(<?php echo $imgLink['display']; ?>) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
     <div class="row text-vertical-center">
         <div class="col-xs-offset-2 col-xs-8 banner-desc">
             <?php echo $sbanner['Entry']['description']; ?>
@@ -202,6 +210,44 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script type="text/javascript">
     $(document).ready(function(){
+        $('#service-banner').tooltip();
+        $('#service-banner').click(function(){
+            window.location = site+"services/";
+        });
+
+        // masonry script !!
+        var $container = $('.portfolio-row');
+        $container.imagesLoaded(function () {
+            $container.masonry({
+                itemSelector: '.port-box',
+                columnWidth: '.port-box',
+                transitionDuration: 0
+            });
+        });
+
+        $('a.view-more-items').click(function(e){
+            e.preventDefault();
+            alert('Our next projects will coming very soon :)');
+        });
+
+        // navbar menu action ...
+        // close menu after select menu
+        $("#sidebar-wrapper li a").click(function(){
+            $("#sidebar-wrapper").removeClass("active");
+        });
+
+        // Closes the sidebar menu
+        $("#menu-close").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
         <?php if(isset($_POST['submitcontact'])): ?>
             var endnote = '\n\nbest regards,\n<?php echo $mySetting['title']; ?>';
             <?php

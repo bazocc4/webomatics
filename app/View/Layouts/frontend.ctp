@@ -56,7 +56,7 @@
 			echo $this->Html->css('bootstrap-3');
 
 			echo $this->Html->css('smoothness/jquery-ui-1.8.18.custom');
-			// echo $this->Html->css('colorbox');
+			echo $this->Html->css('colorbox');
 			
 			// custom style !!
 			echo $this->Html->css('style');
@@ -72,9 +72,9 @@
 			echo $this->Html->script('jquery-ui-timepicker-addon');
 
 			echo $this->Html->script('jquery.imagesloaded');			
-			// echo $this->Html->script('jquery.colorbox');
+			echo $this->Html->script('jquery.colorbox');
 			// use this script to make colorbox responsive !!
-			// echo $this->Html->script('colorbox_resize');
+			echo $this->Html->script('colorbox_resize');
 
 			// bootstrap script !!
 			echo $this->Html->script('bootstrap.min-3');
@@ -113,32 +113,7 @@
 	</head>
 
 	<body>
-		<?php echo $mySetting['top_insert']; ?>
-		<!-- Navigation -->
-		<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
-		<nav id="sidebar-wrapper">
-		    <ul class="sidebar-nav">
-		        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-		        <li class="sidebar-brand">
-		            <a href="#top"><?php echo $mySetting['title']; ?></a>
-		        </li>
-		        <li>
-		            <a href="#top">Home</a>
-		        </li>
-		        <li>
-		            <a href="#about">About Us</a>
-		        </li>
-		        <li>
-		            <a href="#services">Services</a>
-		        </li>
-		        <li>
-		            <a href="#portfolio">Portfolio</a>
-		        </li>
-		        <li>
-		            <a href="#contact-area">Contact</a>
-		        </li>
-		    </ul>
-		</nav>
+		<?php echo $mySetting['top_insert']; ?>		
 		<?php echo $content_for_layout; ?>
 		<!-- Footer -->
 		<footer>
@@ -178,24 +153,7 @@
 		
 		<!-- ADDITIONAL SCRIPT FOR LAYOUT -->
 		<script>
-			$(document).ready(function(){		
-				// close menu after select menu
-				$("#sidebar-wrapper li a").click(function(){
-					$("#sidebar-wrapper").removeClass("active");
-				});
-
-    			// Closes the sidebar menu
-				$("#menu-close").click(function(e) {
-				    e.preventDefault();
-				    $("#sidebar-wrapper").toggleClass("active");
-				});
-
-				// Opens the sidebar menu
-				$("#menu-toggle").click(function(e) {
-				    e.preventDefault();
-				    $("#sidebar-wrapper").toggleClass("active");
-				});
-
+			$(document).ready(function(){
 				// Target your .container, .wrapper, .post, etc.
     			$("body").fitVids();
 		  	});

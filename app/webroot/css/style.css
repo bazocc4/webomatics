@@ -200,7 +200,12 @@ hr.large {
     display: table;
     width: 100%;
     height: 400px;
-    color: #fff;    
+    color: #fff;
+    cursor: pointer;    
+}
+
+.callout:hover{
+    opacity: 0.9;
 }
 
 .callout .banner-desc{

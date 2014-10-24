@@ -21,7 +21,6 @@ $(document).ready(function(){
 		    $('#cboxClose').hide();
 		}
 	});
-
 	$(".get-from-table").colorbox({
 		reposition: false,
 		onLoad: function() {
@@ -97,11 +96,17 @@ $(document).ready(function(){
 			// clean variable in "add field MASTER DATABASE popup"
 			this_element = '';
 
-			// media library module
-			if($('div.sidebar ul li a#media').hasClass('active'))
-			{
-				window.location = site + 'admin/entries/'+$('input#myTypeSlug').val();
-			}
+			// delete temp thumbnails from blueImp.
+			$.ajaxSetup({cache: false});
+			$.get(site+'entry_metas/deleteTempThumbnails',function(){
+
+				// media library module
+				if($('div.sidebar ul li a#media').hasClass('active'))
+				{
+					window.location = site + 'admin/entries/'+$('input#myTypeSlug').val();
+				}	
+				
+            });
 		}
 	});
 });

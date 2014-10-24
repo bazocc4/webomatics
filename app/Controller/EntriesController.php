@@ -107,6 +107,7 @@ class EntriesController extends AppController {
 		// this is for redirecting home !!
 		if(empty($this->request->params['pass'][$indent]))
 		{
+			$thisIsHomeUrl = true;
 			$this->request->params['pass'][$indent] = 'home';
 		}
 		else if(strtolower($this->request->params['pass'][$indent]) == 'home')
@@ -129,7 +130,7 @@ class EntriesController extends AppController {
 		// ---------------------------------- >>>
 		// end of additional set to view file !!
 		// ---------------------------------- >>>
-		
+
 		// Tree of division beginsss !!
 		if(empty($this->request->params['pass'][$indent+1]))
 		{
@@ -302,7 +303,7 @@ class EntriesController extends AppController {
 		// END OF SHOPPING CART !!
 		
 		$this->onlyActiveEntries = FALSE;
-		$this->setTitle();
+		$this->setTitle(!empty($result['myChildType'])? $result['myChildType']['Type']['name'] : (!empty($result['myType'])? $result['myType']['Type']['name'] : ($thisIsHomeUrl?'':$myEntry['Entry']['title']) ) );
 		$this->render($this->frontEndFolder.$myRenderFile);
 	}
 
