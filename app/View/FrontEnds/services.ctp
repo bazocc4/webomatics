@@ -52,14 +52,15 @@
         foreach ($myList as $key => $value)
         {
             $imgLink = $this->Get->image_link(array('id' => $value['Entry']['main_image']));
+            $alt_title = $value['Entry']['title'].' - &#8220;'.$value['EntryMeta']['subtitle'].'&#8221;';
             ?>
     <div class="featurette" id="<?php echo $value['Entry']['slug']; ?>">        
         <hr class="featurette-divider">
-        <a title="<?php echo $value['Entry']['title'].' '.$myType['Type']['name']; ?>" class="cboxElement" rel="gallery" href="<?php echo $imgLink['display']; ?>">
+        <a alt="<?php echo $alt_title; ?>" title="<?php echo $alt_title; ?>" class="cboxElement" rel="gallery" href="<?php echo $imgLink['display']; ?>">
             <img class="featurette-image img-circle img-responsive pull-<?php echo ($key%2==0?'right':'left'); ?>" src="<?php echo $imgLink['display']; ?>" alt="<?php echo $value['Entry']['title'].' '.$value['Entry']['entry_type']; ?>">
         </a>
         <h2 class="featurette-heading"><?php echo $value['Entry']['title']; ?></h2>
-        <h4 class="text-muted">&#8220;<?php echo $value['EntryMeta']['subtitle']; ?>&#8221;</h4>
+        <h4 class="text-muted"><i>&#8220;<?php echo $value['EntryMeta']['subtitle']; ?>&#8221;</i></h4>
         <div class="lead"><?php echo $value['Entry']['description']; ?></div>
     </div>
             <?php

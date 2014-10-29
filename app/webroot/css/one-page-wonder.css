@@ -42,11 +42,15 @@ body {
     overflow: hidden;
 }
 
+.featurette .lead p{
+    vertical-align: top;
+}
+
 .featurette-image{
     max-width: 500px;
 }
 
-.featurette-image:hover{
+.featurette-image.img-circle:hover{
     opacity: 0.8;
 }
 
