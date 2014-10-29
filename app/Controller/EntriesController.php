@@ -191,6 +191,13 @@ class EntriesController extends AppController {
 					$result['totalList'] = count($result['myList']);
 					$this->set('data' , $result);
 				}
+				else
+				{
+					if(empty($myEntry))
+					{
+						$this->redirect(redirectSessionNow($_SERVER['REQUEST_URI'].'/'));
+					}
+				}
 				
 				// convert render file name to its parent language !!
 				if(substr(strtolower($this->mySetting['language'][0]), 0,2) != $language)
