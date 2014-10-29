@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.2.0.1
+-- version 4.1.8
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 24, 2014 at 10:39 AM
--- Server version: 5.1.37
--- PHP Version: 5.3.0
+-- Generation Time: Oct 29, 2014 at 02:49 AM
+-- Server version: 5.5.37-cll
+-- PHP Version: 5.4.23
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -16,7 +17,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `webomatics`
+-- Database: `k2157616_webomatics`
 --
 
 -- --------------------------------------------------------
@@ -47,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `cms_accounts` (
 --
 
 INSERT INTO `cms_accounts` (`id`, `user_id`, `role_id`, `username`, `email`, `password`, `last_login`, `created`, `created_by`, `modified`, `modified_by`) VALUES
-(1, 1, 1, 'admin', 'admin@yahoo.com', '169e781bd52860b584879cbe117085da596238f3', '2014-10-15 11:13:13', '2013-01-04 00:00:00', 1, '2013-01-04 00:00:00', 1);
+(1, 1, 1, 'admin', 'admin@yahoo.com', '169e781bd52860b584879cbe117085da596238f3', '2014-10-29 10:39:58', '2013-01-04 00:00:00', 1, '2013-01-04 00:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -73,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `cms_entries` (
   `lang_code` varchar(10) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=46 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=48 ;
 
 --
 -- Dumping data for table `cms_entries`
@@ -82,13 +83,13 @@ CREATE TABLE IF NOT EXISTS `cms_entries` (
 INSERT INTO `cms_entries` (`id`, `entry_type`, `title`, `slug`, `description`, `main_image`, `parent_id`, `status`, `count`, `created`, `created_by`, `modified`, `modified_by`, `sort_order`, `lang_code`) VALUES
 (1, 'media', 'medium-logo', 'medium-logo', NULL, 0, 0, 1, 0, '2014-10-02 13:54:24', 1, '2014-10-02 13:54:24', 1, 1, 'en-1'),
 (2, 'pages', 'Home', 'home', '', 1, 0, 1, 0, '2014-10-02 13:55:41', 1, '2014-10-02 13:55:41', 1, 2, 'en-2'),
-(3, 'pages', 'Your Solution to your Online Marketing Business', 'about', '<p><span style="font-size:18px;">Do you own Trading Company, Survey Company, or maybe Online Shop Company? All of these major can be boosted up with <em><strong>website technology</strong></em>, for faster &amp; easier management (not like using pencil &amp; paper anymore).</span></p>\r\n', 0, 0, 1, 0, '2014-10-02 14:02:44', 1, '2014-10-07 15:41:23', 1, 3, 'en-3'),
+(3, 'pages', 'Your Solution to your Online Marketing Business', 'about', '<p><span style="font-size:18px;">Do you own Trading Company, Survey Company, or maybe Online Shop Company? Nowadays, all of these major can be boosted up with <em><strong>website technology</strong></em>, for faster &amp; easier management (not like using pencil &amp; paper anymore).</span></p>\r\n', 0, 0, 1, 0, '2014-10-02 14:02:44', 1, '2014-10-29 13:41:00', 1, 3, 'en-3'),
 (4, 'media', 'best-website-marketing-developer', 'best-website-marketing-developer', NULL, 0, 0, 1, 0, '2014-10-08 09:21:04', 1, '2014-10-08 09:21:04', 1, 4, 'en-4'),
-(5, 'pages', 'Services Banner', 'services-banner', '<p><img alt="approved" height="259" src="/webomatics/img/upload/33.png" width="536" /></p>\r\n', 4, 0, 1, 0, '2014-10-08 09:21:17', 1, '2014-10-14 14:06:11', 1, 5, 'en-5'),
-(6, 'services', 'Website', 'website', '<p>Et corporis doloremque eveniet omnis impedit, eum voluptatum atque natus a, nesciunt doloribus repudiandae debitis aliquid cupiditate ipsum. Molestiae natus facilis nesciunt perspiciatis omnis autem sed, voluptas accusantium doloremque quidem.</p>\r\n', 15, 0, 1, 0, '2014-10-08 11:15:04', 1, '2014-10-23 14:17:11', 1, 7, 'en-6'),
-(7, 'services', 'Analyst', 'analyst', '<p>Dolores, excepturi, ipsum. Aut cumque repellendus animi repellat consequuntur, illum deserunt possimus magni, soluta magnam, rem doloremque debitis temporibus ipsam unde placeat rerum dolorum, nesciunt. Deleniti non similique, architecto modi!</p>\r\n', 13, 0, 1, 0, '2014-10-08 11:16:35', 1, '2014-10-23 14:14:37', 1, 8, 'en-7'),
-(8, 'services', 'Conceptor', 'conceptor', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore voluptates, voluptate doloribus quaerat sequi sunt porro magni provident, dignissimos quibusdam ad assumenda perspiciatis tempora eius, illum nam perferendis at consequatur?</p>\r\n', 45, 0, 1, 0, '2014-10-08 11:16:43', 1, '2014-10-23 16:30:39', 1, 9, 'en-8'),
-(9, 'services', 'Marketing', 'marketing', '<p>Architecto mollitia repellendus voluptate quisquam alias nulla dolorum odio laudantium, odit, omnis voluptates fugiat veritatis. Quod dolores reiciendis, facilis recusandae eius ex atque veniam, dolorum, delectus deleniti consectetur. Voluptatum, quam.</p>\r\n', 44, 0, 1, 0, '2014-10-08 11:16:52', 1, '2014-10-23 15:54:46', 1, 6, 'en-9'),
+(5, 'pages', 'Services Banner', 'services-banner', '<p><img alt="approved" height="259" src="/img/upload/33.png" width="536" /></p>\r\n', 4, 0, 1, 0, '2014-10-08 09:21:17', 1, '2014-10-14 14:06:11', 1, 5, 'en-5'),
+(6, 'services', 'Website', 'website', '<p>Design &amp; programming phase arrive here, where you are talking about design and we are giving those codes <span style="color:#0000FF;"><em>out of the box.</em></span> At webomatics, you can choose to set out design initialization for your website, or request us to help building design implementation that suite your desire.</p>\r\n\r\n<p>From those point out, we gather all the resources, like PSD format files that illustrate website looks &amp; feel. Then, starting to write bunch of codes that building your website right away.</p>\r\n\r\n<blockquote>\r\n<p><em><span style="color:#0000FF;"><strong>Being friends with technology makes life easier.</strong></span></em></p>\r\n</blockquote>\r\n\r\n<p><img alt="responsive-icon" class="featurette-image pull-left" height="243" src="/img/upload/46.png" width="320" />Besides all of those, we also like to play with <em><span style="color:#0000FF;">responsive website.</span></em>&nbsp;In short, all&nbsp;website contents on each device are automatically arranged neatly to suite the device layout width, so there&#39;ll be no&nbsp;horizontal scrollbar anymore.</p>\r\n\r\n<p><em><span style="color:#0000FF;">Back-End administrator system</span></em> will gear up your website too, which&nbsp;work by obtaining user input and gathering input from other systems to provide responsive data output&nbsp;on&nbsp;<em><span style="color:#0000FF;">Front-End website views.</span></em></p>\r\n', 15, 0, 1, 0, '2014-10-08 11:15:04', 1, '2014-10-29 11:11:05', 1, 7, 'en-6'),
+(7, 'services', 'Analyst', 'analyst', '<p>After we&#39;ve done for the final concept, we would analyze how to make these concept to get into <span style="color:#FF8C00;"><em>design &amp; programming phase.</em></span>&nbsp;<span style="line-height: 20.7999992370605px;">This phenomena always produce a lot of questions.</span></p>\r\n\r\n<p>Do&nbsp;those workflow concept meet&nbsp;data &amp; system requirements?&nbsp;What is in &amp;&nbsp;out of scope for this project?&nbsp;When do you want the system to go online? How to synchronize all the concept entity to be <em><span style="color:#FF8C00;">one final website?</span><span style="color:#FFA500;">&nbsp;</span></em>And much more of those questions ahead we&#39;d love to solve.</p>\r\n\r\n<blockquote style="border-left: none; border-right: 5px solid #eee;">\r\n<p style="text-align: right;"><span style="color:#FF8C00;"><em><strong>Let us analyze the whole system for you.</strong></em></span></p>\r\n</blockquote>\r\n', 13, 0, 1, 0, '2014-10-08 11:16:35', 1, '2014-10-29 10:59:41', 1, 8, 'en-7'),
+(8, 'services', 'Conceptor', 'conceptor', '<p><strong>1st thing 1st!</strong> Before beginning to do all your website campaign, what kind of preparation should you start? Just having campaign ideas&nbsp;actually not enough without <span style="color:#0000FF;"><em>good workflow&nbsp;concept</em></span>.</p>\r\n\r\n<p>What kind of workflow system do you prefer? Is it inventory, survey, online e-commerce, or maybe POS system? What kind of market&nbsp;do your campaign targeted for? What services your company would like to help? We gladly like to <span style="color:#0000FF;"><em>brainstorm it all</em></span> with your team.</p>\r\n\r\n<blockquote>\r\n<p><span style="color:#0000FF;"><em><strong>We got&nbsp;your ideas &amp; You got&nbsp;our concept!</strong></em></span></p>\r\n</blockquote>\r\n', 45, 0, 1, 0, '2014-10-08 11:16:43', 1, '2014-10-29 10:49:16', 1, 9, 'en-8'),
+(9, 'services', 'Marketing', 'marketing', '<p><strong>Last, but not least!</strong>&nbsp;The main goal for this marketing phase is how to attract people around the world to find your website online. Using marketing tools, such as <em><span style="color:#FF8C00;">SEO (Search Engine Optimization), AdWords (service by Google), and social media sites,</span></em> can boost website traffic significantly.</p>\r\n\r\n<blockquote style="border-left: none; border-right: 5px solid #eee;">\r\n<p style="text-align: right;"><span style="color:#FF8C00;"><em><strong>Create something people want to share.</strong></em></span></p>\r\n</blockquote>\r\n\r\n<p><img alt="google-ranking" class="featurette-image pull-right" height="186" src="/img/upload/47.png" width="300" />Improving your website&#39;s ranking at search engine, like Google, Yahoo, or Bing, is one of many ways to achieve those goal. <span style="color:#FF8C00;"><em>Publish relevant content, update&nbsp;website content regularly, and have&nbsp;a link-worthy site</em></span> are some action that we need to accomplish.</p>\r\n\r\n<p>What kind of <em><span style="color:#FF8C00;">marketing strategy</span></em> do we need to provoke customer to have interest for our campaign / products when they open the website online at very&nbsp;first sight? How to attract their eyes keep looking our website content without leaving? Our team ready to help you guys out of this challenge.</p>\r\n', 44, 0, 1, 0, '2014-10-08 11:16:52', 1, '2014-10-29 11:14:51', 1, 6, 'en-9'),
 (10, 'media', 'logo', 'logo', NULL, 0, 0, 1, 0, '2014-10-09 14:22:51', 1, '2014-10-09 14:22:51', 1, 10, 'en-10'),
 (11, 'developer', 'PT. Creazi Citra Cemerlang', 'creazi-citra-cemerlang', '', 10, 0, 1, 0, '2014-10-09 14:22:57', 1, '2014-10-13 13:39:47', 1, 11, 'en-11'),
 (12, 'media', 'portfolio-1', 'portfolio-1', NULL, 0, 0, 1, 0, '2014-10-09 14:23:41', 1, '2014-10-09 14:23:41', 1, 12, 'en-12'),
@@ -113,11 +114,13 @@ INSERT INTO `cms_entries` (`id`, `entry_type`, `title`, `slug`, `description`, `
 (37, 'media', 'hatisehat', 'hatisehat', NULL, 0, 0, 1, 0, '2014-10-14 15:40:39', 1, '2014-10-14 15:40:39', 1, 37, 'en-37'),
 (38, 'portfolio', 'Helmig`s Curcumin', 'helmig-s-curcumin', '', 37, 0, 1, 0, '2014-10-14 15:42:10', 1, '2014-10-14 15:44:42', 1, 38, 'en-38'),
 (39, 'media', 'callout', 'callout', NULL, 0, 0, 1, 0, '2014-10-15 15:21:45', 1, '2014-10-15 15:21:45', 1, 39, 'en-39'),
-(40, 'pages', 'Contact Us', 'contact-us', '<p>Any questions? Feel free to ask &nbsp;<img alt="wink" height="20" src="http://127.0.0.1/webomatics/js/ckeditor/plugins/smiley/images/wink_smile.png" title="wink" width="20" /></p>\r\n', 39, 0, 1, 0, '2014-10-15 15:22:12', 1, '2014-10-15 16:36:54', 1, 40, 'en-40'),
+(40, 'pages', 'Contact Us', 'contact-us', '<p>Any questions? Feel free to ask &nbsp;<img alt="wink" height="20" src="http://webomatics.net/js/ckeditor/plugins/smiley/images/wink_smile.png" title="wink" width="20" /></p>\r\n', 39, 0, 1, 0, '2014-10-15 15:22:12', 1, '2014-10-24 11:14:19', 1, 40, 'en-40'),
 (42, 'pages', 'Services Header', 'services-header', '', 43, 0, 1, 0, '2014-10-22 15:53:43', 1, '2014-10-23 14:48:11', 1, 42, 'en-42'),
 (43, 'media', 'website-service', 'website-service', NULL, 0, 0, 1, 0, '2014-10-23 14:47:56', 1, '2014-10-23 14:47:56', 1, 43, 'en-43'),
 (44, 'media', 'marketing', 'marketing-1', NULL, 0, 0, 1, 0, '2014-10-23 15:54:36', 1, '2014-10-23 15:54:36', 1, 44, 'en-44'),
-(45, 'media', 'concept', 'concept', NULL, 0, 0, 1, 0, '2014-10-23 16:30:31', 1, '2014-10-23 16:30:31', 1, 45, 'en-45');
+(45, 'media', 'concept', 'concept', NULL, 0, 0, 1, 0, '2014-10-23 16:30:31', 1, '2014-10-23 16:30:31', 1, 45, 'en-45'),
+(46, 'media', 'responsive-icon', 'responsive-icon', NULL, 0, 0, 1, 0, '2014-10-29 10:46:40', 1, '2014-10-29 10:46:40', 1, 46, 'en-46'),
+(47, 'media', 'google-ranking', 'google-ranking', NULL, 0, 0, 1, 0, '2014-10-29 10:47:08', 1, '2014-10-29 10:47:08', 1, 47, 'en-47');
 
 -- --------------------------------------------------------
 
@@ -131,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `cms_entry_metas` (
   `key` varchar(500) NOT NULL,
   `value` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=188 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=204 ;
 
 --
 -- Dumping data for table `cms_entry_metas`
@@ -142,8 +145,7 @@ INSERT INTO `cms_entry_metas` (`id`, `entry_id`, `key`, `value`) VALUES
 (107, 1, 'image_type', 'png'),
 (106, 4, 'image_size', '882233'),
 (105, 4, 'image_type', 'png'),
-(176, 9, 'form-subtitle', 'building your traffic'),
-(184, 8, 'form-teaser', '<p><span style="line-height: 20.7999992370605px;">Do you have an idea for&nbsp;website, but don&#39;t know what to do next? We&#39;re on your&nbsp;line.</span></p>\r\n'),
+(193, 8, 'form-teaser', '<p><span style="line-height: 20.7999992370605px;">Do you have an idea for&nbsp;website, but don&#39;t know what to do next? We&#39;re on your&nbsp;line.</span></p>\r\n'),
 (37, 10, 'image_type', 'png'),
 (38, 10, 'image_size', '37514'),
 (77, 11, 'form-url_link', 'http://www.creazi.co.id'),
@@ -189,22 +191,27 @@ INSERT INTO `cms_entry_metas` (`id`, `entry_id`, `key`, `value`) VALUES
 (124, 38, 'form-developer', 'creazi-citra-cemerlang'),
 (126, 39, 'image_type', 'jpg'),
 (127, 39, 'image_size', '68008'),
-(162, 7, 'form-teaser', '<p><span style="line-height: 20.7999992370605px;">At webomatics, we help you to analyze what kind of data &amp; system that suite your website.</span></p>\r\n'),
-(165, 6, 'form-teaser', '<p><span style="line-height: 20.7999992370605px;">Using&nbsp;</span><em style="line-height: 20.7999992370605px;"><strong><a href="http://en.wikipedia.org/wiki/Web_application_framework" target="_blank"><span style="color: rgb(255, 255, 255);">WAF</span></a></strong></em><span style="line-height: 20.7999992370605px;">&nbsp;&amp;&nbsp;</span><a href="http://en.wikipedia.org/wiki/HTML5" style="line-height: 20.7999992370605px;" target="_blank"><em><strong><span style="color: rgb(255, 255, 255);">HTML5&nbsp;Technology</span></strong></em></a><span style="line-height: 20.7999992370605px;">, we guarantee your website are ready to be baked!</span></p>\r\n'),
-(177, 9, 'form-teaser', '<p><span style="line-height: 20.7999992370605px;">Attract&nbsp;business market to your website traffic with&nbsp;</span><em style="line-height: 20.7999992370605px;"><strong><a href="http://en.wikipedia.org/wiki/Search_engine_optimization" target="_blank"><span style="color: rgb(255, 255, 255);">SEO Technology</span></a></strong></em><span style="line-height: 20.7999992370605px;">.</span></p>\r\n'),
-(163, 7, 'form-icon', 'fa-lightbulb-o'),
-(185, 8, 'form-icon', 'fa-puzzle-piece'),
-(161, 7, 'form-subtitle', 'analyze the workflow'),
-(164, 6, 'form-subtitle', 'programming HTML codes'),
-(183, 8, 'form-subtitle', 'great concept, great start'),
-(166, 6, 'form-icon', 'fa-html5'),
+(196, 7, 'form-teaser', '<p><span style="line-height: 20.7999992370605px;">At webomatics, we help you to analyze what kind of data &amp; system that suite your website.</span></p>\r\n'),
+(199, 6, 'form-teaser', '<p><span style="line-height: 20.7999992370605px;">Using&nbsp;</span><em style="line-height: 20.7999992370605px;"><strong><a href="http://en.wikipedia.org/wiki/Web_application_framework" target="_blank"><span style="color: rgb(255, 255, 255);">WAF</span></a></strong></em><span style="line-height: 20.7999992370605px;">&nbsp;&amp;&nbsp;</span><a href="http://en.wikipedia.org/wiki/HTML5" style="line-height: 20.7999992370605px;" target="_blank"><em><strong><span style="color: rgb(255, 255, 255);">HTML5&nbsp;Technology</span></strong></em></a><span style="line-height: 20.7999992370605px;">, we guarantee your website are ready to be baked!</span></p>\r\n'),
+(202, 9, 'form-teaser', '<p><span style="line-height: 20.7999992370605px;">Attract&nbsp;business market to your website traffic with&nbsp;</span><em style="line-height: 20.7999992370605px;"><strong><a href="http://en.wikipedia.org/wiki/Search_engine_optimization" target="_blank"><span style="color: rgb(255, 255, 255);">SEO Technology</span></a></strong></em><span style="line-height: 20.7999992370605px;">.</span></p>\r\n'),
+(195, 7, 'form-subtitle', 'look at the game like a coach'),
+(192, 8, 'form-subtitle', 'great concept, great start'),
+(198, 6, 'form-subtitle', 'talking with the codes'),
 (173, 43, 'image_size', '179959'),
 (172, 43, 'image_type', 'jpg'),
 (180, 44, 'image_size', '61914'),
 (179, 44, 'image_type', 'jpg'),
-(178, 9, 'form-icon', 'fa-users'),
+(201, 9, 'form-subtitle', 'building your traffic'),
 (187, 45, 'image_size', '318493'),
-(186, 45, 'image_type', 'jpg');
+(186, 45, 'image_type', 'jpg'),
+(188, 46, 'image_type', 'png'),
+(189, 46, 'image_size', '29870'),
+(190, 47, 'image_type', 'png'),
+(191, 47, 'image_size', '41556'),
+(194, 8, 'form-icon', 'fa-puzzle-piece'),
+(197, 7, 'form-icon', 'fa-lightbulb-o'),
+(200, 6, 'form-icon', 'fa-html5'),
+(203, 9, 'form-icon', 'fa-users');
 
 -- --------------------------------------------------------
 
@@ -255,7 +262,7 @@ INSERT INTO `cms_settings` (`id`, `key`, `value`) VALUES
 (6, 'header', ''),
 (7, 'top_insert', ''),
 (8, 'bottom_insert', ''),
-(9, 'google_analytics_code', 'UA-33194544-1'),
+(9, 'google_analytics_code', 'UA-42878281-3'),
 (10, 'display_width', '3200'),
 (11, 'display_height', '1800'),
 (12, 'display_crop', '0'),
