@@ -150,7 +150,7 @@
                     ?>
                 </div>
                 <!-- /.row (nested) -->
-                <a href="#" class="btn btn-dark view-more-items">View More Items</a>
+                <a href="#" class="btn btn-dark view-more-items">View More Works</a>
                 <p class="fyi">*) Developed by <a target="_blank" href="<?php echo $firstdeveloper['EntryMeta']['url_link']; ?>"><?php echo $firstdeveloper['Entry']['title']; ?></a> whereas <a href="#top">webomatics.net</a> doing programming phase.</p>
             </div>
             <!-- /.col-lg-10 -->
@@ -227,7 +227,7 @@
 
         $('a.view-more-items').click(function(e){
             e.preventDefault();
-            alert('Our next projects will coming very soon :)');
+            alert('Our remaining projects are still under construction.');
         });
 
         // navbar menu action ...
