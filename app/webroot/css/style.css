@@ -21,6 +21,10 @@ img{
     max-width: 100%;
 }
 
+p{
+    margin-top : 5px;
+}
+
 .text-vertical-center {
     display: table-cell;
     text-align: center;
