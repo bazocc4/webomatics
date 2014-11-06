@@ -128,7 +128,7 @@
 						<p class="text-muted">
 							Copyright &copy; <?php echo $mySetting['title']; ?> 2014
 							<br>
-							All rights reserved.
+							All Rights Reserved.
 						</p>
 					</div>
 					<div class="col-lg-3 col-md-3">
