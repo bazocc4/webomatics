@@ -220,8 +220,7 @@
         $container.imagesLoaded(function () {
             $container.masonry({
                 itemSelector: '.port-box',
-                columnWidth: '.port-box',
-                transitionDuration: 0
+                isAnimated: true
             });
         });
 

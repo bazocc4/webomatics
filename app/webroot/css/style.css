@@ -25,6 +25,10 @@ p{
     margin-top : 5px;
 }
 
+a{
+    text-decoration: none !important;
+}
+
 .text-vertical-center {
     display: table-cell;
     text-align: center;
