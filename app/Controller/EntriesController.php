@@ -10,7 +10,14 @@ class EntriesController extends AppController {
 	
 	public function beforeFilter(){
         parent::beforeFilter();
-		$this->Auth->allow('index','get_list_entry','get_detail_entry');
+		$this->Auth->allow('index','get_list_entry','get_detail_entry','ajax_portfolio');
+    }
+    
+    public function ajax_portfolio($page)
+    {
+        $this->layout = "ajax";        
+        $this->_admin_default( $this->Type->findBySlug('portfolio') , $page);
+        $this->render($this->frontEndFolder.'ajax_portfolio');
     }
 	
 	/**
@@ -165,31 +172,9 @@ class EntriesController extends AppController {
 					$this->set('services', $services['myList']);
 
 					// load portfolio data !!
-					$portfolio = $this->_admin_default( $this->Type->findBySlug('portfolio') , 0 , NULL , NULL , NULL ,NULL,NULL,NULL, NULL , 'manualset');
-					$this->set('portfolio', $portfolio['myList']);
-				}
-				else if($myEntrySlug == 'search')
-				{
-					// forbid access page without params !!
-					if(empty($this->request->data))
-					{
-						$this->redirect('/'.(empty($indent)?'':$language.'/'));
-					}
-
-					$globalresult = array();
-					$search_types = array('gallery'); // array of module to be searched
-
-					foreach ($search_types as $key => $value) 
-					{
-						$tempresult = $this->_admin_default( $this->Type->findBySlug( $value ) , 0, NULL, NULL, NULL, NULL, $this->request->data['search'] ,NULL, $language , 'manualset');
-
-						$globalresult = array_merge($globalresult, $tempresult['myList']);
-					}
-
-					// RENEW THE RESULT !!
-					$result['myList'] = orderby_metavalue( $globalresult , 'Entry', 'modified' , 'DESC');
-					$result['totalList'] = count($result['myList']);
-					$this->set('data' , $result);
+					$portfolio = $this->_admin_default( $this->Type->findBySlug('portfolio') , 1 , NULL , NULL , NULL ,NULL,NULL,NULL, NULL , 'manualset');
+					$this->set('portfolio', $portfolio['myList']);                    
+                    $this->set('portfolio_countPage' , $portfolio['countPage']);
 				}
 				else
 				{

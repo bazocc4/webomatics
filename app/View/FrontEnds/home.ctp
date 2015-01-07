@@ -10,6 +10,7 @@
         theme : 'white'
     };
 </script>
+
 <!-- Navigation -->
 <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
 <nav id="sidebar-wrapper">
@@ -149,8 +150,12 @@
                         }
                     ?>
                 </div>
+                <input type="hidden" id="portfolio-countPage" value="<?php echo $portfolio_countPage; ?>">
                 <!-- /.row (nested) -->
-                <a href="#" class="btn btn-dark view-more-items">View More Works</a>
+                <a data-page="2" href="#" class="btn btn-dark view-more-items">
+                    <img class="hide" src="<?php echo $imagePath; ?>images/ajax-loader.gif" alt="loading portfolio">
+                    <span>&nbsp;View More Works&nbsp;</span>
+                </a>
                 <p class="fyi">*) Developed by <a target="_blank" href="<?php echo $firstdeveloper['EntryMeta']['url_link']; ?>"><?php echo $firstdeveloper['Entry']['title']; ?></a> whereas <a href="#top">webomatics.net</a> doing programming phase.</p>
             </div>
             <!-- /.col-lg-10 -->
@@ -215,7 +220,7 @@
             window.location = site+"services/";
         });
 
-        // masonry script !!
+        // initialize masonry script !!
         var $container = $('.portfolio-row');
         $container.imagesLoaded(function () {
             $container.masonry({
@@ -223,10 +228,40 @@
                 isAnimated: true
             });
         });
+        // end of initialize !!
 
         $('a.view-more-items').click(function(e){
             e.preventDefault();
-            alert('Our remaining projects are still under construction.');
+            
+            var myobj = $(this);
+            var nextpage = parseInt( myobj.attr('data-page') );            
+            var countPage = parseInt( $('input#portfolio-countPage').val() );
+            
+            myobj.find('span').addClass('hide');
+            myobj.find('img').removeClass('hide');
+            
+            $.ajaxSetup({cache: false});
+			$.get(site+"entries/ajax_portfolio/"+nextpage,function(data){
+                
+                if(data.length > 0)
+                {
+                    $container.append(data).imagesLoaded(function () {
+                        $container.masonry('reloadItems').masonry('layout');
+                    });
+                }
+                
+                // append DONE !!                
+                if( nextpage < countPage)
+                {
+                    myobj.attr('data-page' , nextpage+1 );
+                    myobj.find('img').addClass('hide');
+                    myobj.find('span').removeClass('hide');
+                }
+                else // THE END of ajax !!
+                {
+                    myobj.addClass('hide');
+                }
+            });
         });
 
         // navbar menu action ...

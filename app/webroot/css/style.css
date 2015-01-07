@@ -222,6 +222,10 @@ hr.large {
 
 /* Portfolio */
 
+a.view-more-items {
+    font-size: 17px;
+}
+
 .portfolio {
     padding-top: 50px;
 }
