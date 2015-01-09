@@ -127,7 +127,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1 text-center">
-                <h2>Our Work</h2>
+                <h2>Our Works</h2>
                 <hr class="small">
                 <div class="row portfolio-row">
                     <?php
@@ -232,32 +232,41 @@
 
         $('a.view-more-items').click(function(e){
             e.preventDefault();
-            
             var myobj = $(this);
             var nextpage = parseInt( myobj.attr('data-page') );            
             var countPage = parseInt( $('input#portfolio-countPage').val() );
+            
+            // check not to overlap ajax process !!
+            if(myobj.find('img').is(':visible'))
+            {
+                alert('Please wait a moment ...');
+                return;
+            }
             
             myobj.find('span').addClass('hide');
             myobj.find('img').removeClass('hide');
             
             $.ajaxSetup({cache: false});
-			$.get(site+"entries/ajax_portfolio/"+nextpage,function(data){
-                
+			$.get(site+"entries/ajax_portfolio/"+nextpage,function(data){                
                 if(data.length > 0)
                 {
                     $container.append(data).imagesLoaded(function () {
                         $container.masonry('reloadItems').masonry('layout');
+                        
+                        // append DONE !!                
+                        if( nextpage < countPage)
+                        {
+                            myobj.attr('data-page' , nextpage+1 );
+                            myobj.find('img').addClass('hide');
+                            myobj.find('span').removeClass('hide');
+                        }
+                        else // THE END of ajax !!
+                        {
+                            myobj.addClass('hide');
+                        }
                     });
                 }
-                
-                // append DONE !!                
-                if( nextpage < countPage)
-                {
-                    myobj.attr('data-page' , nextpage+1 );
-                    myobj.find('img').addClass('hide');
-                    myobj.find('span').removeClass('hide');
-                }
-                else // THE END of ajax !!
+                else
                 {
                     myobj.addClass('hide');
                 }
