@@ -44,7 +44,7 @@
                 $homeimage = $this->Get->image_link(array('id' => $myEntry['Entry']['main_image']));
             ?>
             <img src="<?php echo $homeimage['display']; ?>" alt="<?php echo $mySetting['title'].' '.$myEntry['Entry']['title']; ?> logo design website" class="img-responsive center-block">
-            <h3><?php echo $mySetting['description']; ?></h3>
+            <h3><?php echo $myEntry['Entry']['description']; ?></h3>
             <br>
             <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
         </div>
