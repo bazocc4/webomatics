@@ -17,7 +17,7 @@
     <ul class="sidebar-nav">
         <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
         <li class="sidebar-brand">
-            <a href="#top"><?php echo $mySetting['title']; ?></a>
+            <a href="#top">Webomatics</a>
         </li>
         <li>
             <a href="#top">Home</a>

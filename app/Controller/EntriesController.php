@@ -173,7 +173,7 @@ class EntriesController extends AppController {
 
 					// load portfolio data !!
 					$portfolio = $this->_admin_default( $this->Type->findBySlug('portfolio') , 1 , NULL , NULL , NULL ,NULL,NULL,NULL, NULL , 'manualset');
-					$this->set('portfolio', $portfolio['myList']);                    
+					$this->set('portfolio', $portfolio['myList'] );
                     $this->set('portfolio_countPage' , $portfolio['countPage']);
 				}
 				else

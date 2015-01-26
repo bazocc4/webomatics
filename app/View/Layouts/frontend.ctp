@@ -124,12 +124,10 @@
 					<div class="col-lg-3 col-md-3">
 						<i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:<?php echo $mySetting['custom-email_contact']; ?>"><?php echo $mySetting['custom-email_contact']; ?></a>
 					</div>
-					<div class="col-lg-3 col-md-3">
-						<p class="text-muted">
-							Copyright &copy; <?php echo $mySetting['title']; ?> 2014
-							<br>
-							All Rights Reserved.
-						</p>
+					<div class="col-lg-3 col-md-3 text-muted">
+						Copyright &copy; Webomatics 2014
+                        <br>
+                        All Rights Reserved.
 					</div>
 					<div class="col-lg-3 col-md-3">
 						<hr class="medium visible-sm visible-xs">
