@@ -66,8 +66,18 @@
             <?php
         }
     ?>
-    <span class="pull-left"><a href="<?php echo $imagePath; ?>"><i class="fa fa-angle-double-left"></i> BACK TO HOME</a></span>
-    <span class="pull-right"><a class="going-top" href="#"><i class="fa fa-angle-double-up"></i> GOING TOP</a></span>
+    <div class="featurette-footer-nav">
+        <span class="pull-left">
+            <a href="<?php echo $imagePath; ?>" class="btn btn-dark">
+                <i class="fa fa-angle-double-left"></i>&nbsp;&nbsp;BACK TO HOME
+            </a>
+        </span>
+        <span class="pull-right">
+            <a class="going-top btn btn-dark" href="#">
+                <i class="fa fa-angle-double-up"></i>&nbsp;&nbsp;GOING TOP
+            </a>
+        </span>
+    </div>
     <hr class="featurette-divider">
 </div>
 <!-- /.container -->
@@ -76,7 +86,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         // navbar menu action ...
-        // close menu after select menu
+        // close menu after selecting menu
         $("#bs-example-navbar-collapse-1 li a").click(function(){
             $("#bs-example-navbar-collapse-1").removeClass("in");
         });

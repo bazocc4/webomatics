@@ -130,25 +130,7 @@
                 <h2>Our Works</h2>
                 <hr class="small">
                 <div class="row portfolio-row">
-                    <?php
-                        $firstdeveloper = $this->Get->meta_details(NULL , 'developer');
-
-                        foreach ($portfolio as $key => $value) 
-                        {
-                            $imgLink = $this->Get->image_link(array('id' => $value['Entry']['main_image']));
-                            ?>
-                    <div class="port-box col-lg-3 col-md-4 col-sm-6">
-                        <div class="portfolio-item">
-                            <a target="_blank" href="<?php echo $value['EntryMeta']['url_link']; ?>">
-                                <img class="img-portfolio img-responsive" src="<?php echo $imgLink['display']; ?>" alt="<?php echo $value['Entry']['title'].' '.$value['Entry']['entry_type']; ?>">
-                                
-                                <p class="description"><?php echo $value['Entry']['title'].($value['EntryMeta']['developer']==$firstdeveloper['Entry']['slug']?' <span class="star-sign">*</span>':''); ?></p>
-                            </a>
-                        </div>
-                    </div>
-                            <?php
-                        }
-                    ?>
+                    <?php echo $this->element('portfolio'); ?>
                 </div>
                 <input type="hidden" id="portfolio-countPage" value="<?php echo $portfolio_countPage; ?>">
                 <!-- /.row (nested) -->
@@ -215,7 +197,12 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#service-banner').tooltip();
+        $('[data-toggle=tooltip]').tooltip();
+        $('[data-toggle=tooltip]').each(function(){
+            $(this).attr('title' , $(this).attr('alt') );
+        });
+        
+        // defining navigation link !!
         $('#service-banner').click(function(){
             window.location = site+"services/";
         });

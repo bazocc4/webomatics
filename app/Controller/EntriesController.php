@@ -1039,6 +1039,10 @@ class EntriesController extends AppController {
 				$data['myChildType']['TypeMeta'] = $metaOrder;
 			}
 		}
+        
+        // SEARCH IF GALLERY MODE IS TURN ON / OFF ...
+        $myAutomaticValidation = (empty($myChildType)?$myType['TypeMeta']:$myChildType['TypeMeta']);
+        $data['gallery'] = $this->Entry->checkGalleryType($myAutomaticValidation);
 
 		// set page title
 		$this->setTitle(empty($myEntry)?$myType['Type']['name']:$myEntry['Entry']['title']);

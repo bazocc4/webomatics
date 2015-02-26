@@ -38,6 +38,10 @@ body {
     margin-bottom: 0;
 }
 
+.featurette-footer-nav{    /* UPDATED */
+    margin-bottom: 50px;
+}
+
 .featurette {
     overflow: hidden;
 }

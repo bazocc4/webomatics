@@ -160,7 +160,7 @@ class Entry extends AppModel {
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
-			'order' => '',
+			'order' => 'ChildEntry.sort_order ASC',
 			'limit' => '',
 			'offset' => '',
 			'exclusive' => '',
@@ -186,7 +186,7 @@ class Entry extends AppModel {
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
-			'order' => '',
+			'order' => 'EntryMeta.id ASC',
 			'limit' => '',
 			'offset' => '',
 			'exclusive' => '',
@@ -790,4 +790,23 @@ class Entry extends AppModel {
 		
 		return false;
 	}
+    
+    /*
+    Check certain EntryType has gallery feature turn ON / OFF !!
+    */
+    function checkGalleryType($myAutomaticValidation = array())
+    {
+        foreach ($myAutomaticValidation as $key => $value) 
+        {
+            if($value['key'] == 'gallery')
+            {
+                if($value['value'] == 'enable')
+                {
+                    return true;
+                }
+                break;
+            }
+        }
+        return false;
+    }
 }
