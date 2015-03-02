@@ -138,6 +138,9 @@
                     <img class="hide" src="<?php echo $imagePath; ?>images/ajax-loader.gif" alt="loading portfolio">
                     <span>&nbsp;View More Works&nbsp;</span>
                 </a>
+                <?php
+                    $firstdeveloper = $this->Get->meta_details(NULL , 'developer');
+                ?>
                 <p class="fyi">*) Developed by <a target="_blank" href="<?php echo $firstdeveloper['EntryMeta']['url_link']; ?>"><?php echo $firstdeveloper['Entry']['title']; ?></a> whereas <a href="#top">webomatics.net</a> doing programming phase.</p>
             </div>
             <!-- /.col-lg-10 -->
