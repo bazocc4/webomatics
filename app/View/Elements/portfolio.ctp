@@ -8,7 +8,7 @@
         $imgLink = $this->Get->image_link(array('id' => $value['Entry']['main_image']));
         ?>
 <div class="port-box col-lg-3 col-md-4 col-sm-6">
-    <div class="portfolio-item">
+    <div class="portfolio-item <?php echo ($isAjax==1?'hide':''); ?>">
 
         <!--Main Image-->
         <a data-toggle="tooltip" data-placement="top" alt="&laquo; <?php echo $value['Entry']['title']; ?> Website &raquo;" title="Click to view more <?php echo $value['Entry']['title']; ?>'s Gallery" class="cboxElement" rel="<?php echo $value['Entry']['slug']; ?>" href="<?php echo $imgLink['display']; ?>">

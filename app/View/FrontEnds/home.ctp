@@ -241,6 +241,9 @@
                 if(data.length > 0)
                 {
                     $container.append(data).imagesLoaded(function () {
+                        
+                        $container.find('.portfolio-item').removeClass('hide');
+                        
                         $container.masonry('reloadItems').masonry('layout');
                         
                         // append DONE !!                
