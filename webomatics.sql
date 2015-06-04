@@ -46,7 +46,7 @@ CREATE TABLE `cms_accounts` (
 
 LOCK TABLES `cms_accounts` WRITE;
 /*!40000 ALTER TABLE `cms_accounts` DISABLE KEYS */;
-INSERT INTO `cms_accounts` VALUES (1,1,1,'admin','admin@yahoo.com','169e781bd52860b584879cbe117085da596238f3','2014-10-29 10:39:58','2013-01-04 00:00:00',1,'2013-01-04 00:00:00',1);
+INSERT INTO `cms_accounts` VALUES (1,1,1,'admin','admin@yahoo.com','169e781bd52860b584879cbe117085da596238f3','2015-02-09 11:41:34','2013-01-04 00:00:00',1,'2013-01-04 00:00:00',1);
 /*!40000 ALTER TABLE `cms_accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -75,7 +75,7 @@ CREATE TABLE `cms_entries` (
   `lang_code` varchar(10) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
-) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,7 +85,7 @@ CREATE TABLE `cms_entries` (
 LOCK TABLES `cms_entries` WRITE;
 /*!40000 ALTER TABLE `cms_entries` DISABLE KEYS */;
 INSERT INTO `cms_entries` VALUES (1,'media','medium-logo','medium-logo',NULL,0,0,1,0,'2014-10-02 13:54:24',1,'2014-10-02 13:54:24',1,1,'en-1');
-INSERT INTO `cms_entries` VALUES (2,'pages','Home','home','',1,0,1,0,'2014-10-02 13:55:41',1,'2014-10-02 13:55:41',1,2,'en-2');
+INSERT INTO `cms_entries` VALUES (2,'pages','Home','home','where the <i class=\"star-sign\">Website, Technology & Informatics</i> boost your business',1,0,1,0,'2014-10-02 13:55:41',1,'2015-01-13 15:36:44',1,2,'en-2');
 INSERT INTO `cms_entries` VALUES (3,'pages','Your Solution to your Online Marketing Business','about','<p><span style=\"font-size:18px;\">Do you own Trading Company, Survey Company, or maybe Online Shop Company? Nowadays, all of these major can be boosted up with <em><strong>website technology</strong></em>, for faster &amp; easier management (not like using pencil &amp; paper anymore).</span></p>\r\n',0,0,1,0,'2014-10-02 14:02:44',1,'2014-10-29 13:41:00',1,3,'en-3');
 INSERT INTO `cms_entries` VALUES (4,'media','best-website-marketing-developer','best-website-marketing-developer',NULL,0,0,1,0,'2014-10-08 09:21:04',1,'2014-10-08 09:21:04',1,4,'en-4');
 INSERT INTO `cms_entries` VALUES (5,'pages','Services Banner','services-banner','<p><img alt=\"approved\" height=\"259\" src=\"/webomatics/img/upload/33.png\" width=\"536\" /></p>\r\n',4,0,1,0,'2014-10-08 09:21:17',1,'2014-10-14 14:06:11',1,5,'en-5');
@@ -113,17 +113,20 @@ INSERT INTO `cms_entries` VALUES (31,'media','insightcode','insightcode',NULL,0,
 INSERT INTO `cms_entries` VALUES (32,'portfolio','Insight Code','insight-code','',31,0,1,0,'2014-10-14 10:17:21',1,'2014-10-14 15:44:42',1,32,'en-32');
 INSERT INTO `cms_entries` VALUES (33,'media','approved','approved',NULL,0,0,1,0,'2014-10-14 14:05:44',1,'2014-10-14 14:05:44',1,33,'en-33');
 INSERT INTO `cms_entries` VALUES (34,'media','Roti Kecil Bakery Shop','roti-kecil-bakery-shop',NULL,0,0,1,0,'2014-10-14 15:27:28',1,'2014-10-14 15:27:28',1,34,'en-34');
-INSERT INTO `cms_entries` VALUES (35,'portfolio','Roti Kecil Bakery Shop','roti-kecil-bakery-shop-1','',34,0,1,0,'2014-10-14 15:28:06',1,'2014-10-14 15:44:42',1,35,'en-35');
+INSERT INTO `cms_entries` VALUES (35,'portfolio','Roti Kecil Bakery Shop','roti-kecil-bakery-shop-1','',34,0,1,3,'2014-10-14 15:28:06',1,'2015-02-09 11:58:44',1,35,'en-35');
 INSERT INTO `cms_entries` VALUES (37,'media','hatisehat','hatisehat',NULL,0,0,1,0,'2014-10-14 15:40:39',1,'2014-10-14 15:40:39',1,37,'en-37');
 INSERT INTO `cms_entries` VALUES (38,'portfolio','Helmig`s Curcumin','helmig-s-curcumin','',37,0,1,0,'2014-10-14 15:42:10',1,'2014-10-14 15:44:42',1,38,'en-38');
 INSERT INTO `cms_entries` VALUES (39,'media','callout','callout',NULL,0,0,1,0,'2014-10-15 15:21:45',1,'2014-10-15 15:21:45',1,39,'en-39');
-INSERT INTO `cms_entries` VALUES (40,'pages','Contact Us','contact-us','<p>Any questions? Feel free to ask &nbsp;<img alt=\"wink\" height=\"20\" src=\"http://webomatics.net/js/ckeditor/plugins/smiley/images/wink_smile.png\" title=\"wink\" width=\"20\" /></p>\r\n',39,0,1,0,'2014-10-15 15:22:12',1,'2014-10-24 11:14:19',1,40,'en-40');
+INSERT INTO `cms_entries` VALUES (40,'pages','Contact Us','contact-us','<p>Any questions? Feel free to ask &nbsp;<img alt=\"wink\" height=\"20\" src=\"/webomatics/js/ckeditor/plugins/smiley/images/wink_smile.png\" title=\"wink\" width=\"20\" /></p>\r\n',39,0,1,0,'2014-10-15 15:22:12',1,'2014-10-24 11:14:19',1,40,'en-40');
 INSERT INTO `cms_entries` VALUES (42,'pages','Services Header','services-header','',43,0,1,0,'2014-10-22 15:53:43',1,'2014-10-23 14:48:11',1,42,'en-42');
 INSERT INTO `cms_entries` VALUES (43,'media','website-service','website-service',NULL,0,0,1,0,'2014-10-23 14:47:56',1,'2014-10-23 14:47:56',1,43,'en-43');
 INSERT INTO `cms_entries` VALUES (44,'media','marketing','marketing-1',NULL,0,0,1,0,'2014-10-23 15:54:36',1,'2014-10-23 15:54:36',1,44,'en-44');
 INSERT INTO `cms_entries` VALUES (45,'media','concept','concept',NULL,0,0,1,0,'2014-10-23 16:30:31',1,'2014-10-23 16:30:31',1,45,'en-45');
 INSERT INTO `cms_entries` VALUES (46,'media','responsive-icon','responsive-icon',NULL,0,0,1,0,'2014-10-29 10:46:40',1,'2014-10-29 10:46:40',1,46,'en-46');
 INSERT INTO `cms_entries` VALUES (47,'media','google-ranking','google-ranking',NULL,0,0,1,0,'2014-10-29 10:47:08',1,'2014-10-29 10:47:08',1,47,'en-47');
+INSERT INTO `cms_entries` VALUES (48,'portfolio','portfolio-1','portfolio-1-1',NULL,12,35,1,0,'2015-02-09 11:58:44',1,'2015-02-09 11:58:44',1,48,'en-48');
+INSERT INTO `cms_entries` VALUES (49,'portfolio','callout','callout-1',NULL,39,35,1,0,'2015-02-09 11:58:44',1,'2015-02-09 11:58:44',1,49,'en-49');
+INSERT INTO `cms_entries` VALUES (50,'portfolio','portfolio-3','portfolio-3-1',NULL,15,35,1,0,'2015-02-09 11:58:44',1,'2015-02-09 11:58:44',1,50,'en-50');
 /*!40000 ALTER TABLE `cms_entries` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -140,7 +143,7 @@ CREATE TABLE `cms_entry_metas` (
   `key` varchar(500) NOT NULL,
   `value` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=204 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=207 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -191,8 +194,8 @@ INSERT INTO `cms_entry_metas` VALUES (113,33,'image_type','png');
 INSERT INTO `cms_entry_metas` VALUES (114,33,'image_size','86529');
 INSERT INTO `cms_entry_metas` VALUES (115,34,'image_type','png');
 INSERT INTO `cms_entry_metas` VALUES (116,34,'image_size','160125');
-INSERT INTO `cms_entry_metas` VALUES (117,35,'form-url_link','http://rotikecil.com');
-INSERT INTO `cms_entry_metas` VALUES (118,35,'form-developer','creazi-citra-cemerlang');
+INSERT INTO `cms_entry_metas` VALUES (206,35,'form-developer','creazi-citra-cemerlang');
+INSERT INTO `cms_entry_metas` VALUES (205,35,'form-url_link','http://rotikecil.com');
 INSERT INTO `cms_entry_metas` VALUES (122,37,'image_size','634935');
 INSERT INTO `cms_entry_metas` VALUES (121,37,'image_type','png');
 INSERT INTO `cms_entry_metas` VALUES (123,38,'form-url_link','http://hatisehat.com');
@@ -220,6 +223,7 @@ INSERT INTO `cms_entry_metas` VALUES (194,8,'form-icon','fa-puzzle-piece');
 INSERT INTO `cms_entry_metas` VALUES (197,7,'form-icon','fa-lightbulb-o');
 INSERT INTO `cms_entry_metas` VALUES (200,6,'form-icon','fa-html5');
 INSERT INTO `cms_entry_metas` VALUES (203,9,'form-icon','fa-users');
+INSERT INTO `cms_entry_metas` VALUES (204,35,'count-portfolio','3');
 /*!40000 ALTER TABLE `cms_entry_metas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -274,7 +278,7 @@ LOCK TABLES `cms_settings` WRITE;
 /*!40000 ALTER TABLE `cms_settings` DISABLE KEYS */;
 INSERT INTO `cms_settings` VALUES (1,'title','Webomatics');
 INSERT INTO `cms_settings` VALUES (2,'tagline','website, business, technology, informatic, marketing, inventory, online, simple, easy, survey');
-INSERT INTO `cms_settings` VALUES (3,'description','where the <i class=\'star-sign\'>Website, Technology & Informatics</i> boost your business.');
+INSERT INTO `cms_settings` VALUES (3,'description','where the Website, Technology & Informatics boost your business');
 INSERT INTO `cms_settings` VALUES (4,'date_format','d F Y');
 INSERT INTO `cms_settings` VALUES (5,'time_format','h:i A');
 INSERT INTO `cms_settings` VALUES (6,'header','');
@@ -312,7 +316,7 @@ CREATE TABLE `cms_type_metas` (
   `validation` text,
   `instruction` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -323,12 +327,13 @@ LOCK TABLES `cms_type_metas` WRITE;
 /*!40000 ALTER TABLE `cms_type_metas` DISABLE KEYS */;
 INSERT INTO `cms_type_metas` VALUES (1,3,'form-url_link','','text','is_url|','Example: http://www.yourdomain.com');
 INSERT INTO `cms_type_metas` VALUES (11,5,'pagination','4',NULL,NULL,NULL);
-INSERT INTO `cms_type_metas` VALUES (12,5,'form-url_link','','text','not_empty|is_url|','Example: http://www.yourdomain.com');
+INSERT INTO `cms_type_metas` VALUES (28,5,'form-developer','','browse','','Ignore this field if you develop this project yourself.');
 INSERT INTO `cms_type_metas` VALUES (5,6,'form-url_link','','text','is_url|','Example: http://www.yourdomain.com');
 INSERT INTO `cms_type_metas` VALUES (9,4,'form-teaser','','ckeditor','not_empty|','Short description about this service.');
 INSERT INTO `cms_type_metas` VALUES (8,4,'form-subtitle','','text','','more explanation for the title.');
 INSERT INTO `cms_type_metas` VALUES (10,4,'form-icon','','text','','icon symbol for services identity.');
-INSERT INTO `cms_type_metas` VALUES (13,5,'form-developer','','browse','','Ignore this field if you develop this project yourself.');
+INSERT INTO `cms_type_metas` VALUES (26,5,'gallery','enable',NULL,NULL,NULL);
+INSERT INTO `cms_type_metas` VALUES (27,5,'form-url_link','','text','not_empty|is_url|','Example: http://www.yourdomain.com');
 /*!40000 ALTER TABLE `cms_type_metas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -365,7 +370,7 @@ INSERT INTO `cms_types` VALUES (1,'Media Library','media','All media image is st
 INSERT INTO `cms_types` VALUES (2,'Gallery','gallery','Our Gallery Projects.',0,0,'2013-01-15 03:37:26',1,'2013-01-15 03:37:26',1);
 INSERT INTO `cms_types` VALUES (3,'Slideshow','slideshow','Home slideshow with details.',0,0,'2014-09-03 10:35:08',1,'2014-09-03 10:35:08',1);
 INSERT INTO `cms_types` VALUES (4,'Services','services','',0,0,'2014-10-08 11:14:25',1,'2014-10-22 16:08:29',1);
-INSERT INTO `cms_types` VALUES (5,'Portfolio','portfolio','Webomatics Website Portfolio',0,0,'2014-10-09 14:16:09',1,'2015-01-07 22:07:34',1);
+INSERT INTO `cms_types` VALUES (5,'Portfolio','portfolio','Webomatics Website Portfolio',0,0,'2014-10-09 14:16:09',1,'2015-02-09 11:56:03',1);
 INSERT INTO `cms_types` VALUES (6,'Developer','developer','Outsource Project Developer.',0,0,'2014-10-09 14:16:52',1,'2014-10-09 14:21:00',1);
 /*!40000 ALTER TABLE `cms_types` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -445,4 +450,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-06-04 21:34:33
+-- Dump completed on 2015-06-04 21:50:48
