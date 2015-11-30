@@ -209,7 +209,7 @@
 				}
 			}
 		?>
-		<th><?php echo strtoupper($titlekey); ?></th>
+		<th><?php echo strtoupper($titlekey).' ('.$totalList.')'; ?></th>
 		
 		<?php
 			// if this is a parent Entry !!
