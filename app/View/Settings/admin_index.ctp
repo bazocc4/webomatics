@@ -135,7 +135,7 @@
 			$value['validation'] = '';
 			$value['value'] = $mySetting[$value['counter']]['Setting']['value'];
 			$value['model'] = 'Setting';			
-			$value['input_type'] = 'text';
+			$value['input_type'] = 'textarea';
 			echo $this->element('input_'.$value['input_type'] , $value);
 			
 			// Description...

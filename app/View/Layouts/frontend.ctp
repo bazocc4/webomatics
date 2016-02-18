@@ -11,13 +11,15 @@
 		<?php
 			echo $this->Html->meta('rss' , '/entries/index.rss');
 		?>
-		<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="author" content="<?php echo $mySetting['title']; ?>">		
 		<meta name="tagline" content="<?php echo $mySetting['tagline']; ?>">		
 		<meta name="description" content="<?php echo $mySetting['description']; ?>">
 		<?php
             // ----------------- Open Graph protocol ---------------------
+            echo '<meta property="og:url" content="http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'].'" />';
+            echo '<meta property="og:site_name" content="'.$mySetting['title'].'" />';
+        
             if(!empty($data['myEntry']))
             {
             	if(!empty($data['myEntry']['Entry']['title']))
@@ -120,6 +122,8 @@
 		        <div class="row">
 		        	<div class="col-lg-2 col-lg-offset-1 col-md-3">
 						<i class="fa fa-phone fa-fw"></i> <a href="tel:+<?php echo str_replace('-', '', get_slug($mySetting['custom-phone_contact']) ); ?>"><?php echo $mySetting['custom-phone_contact']; ?></a>
+						<br>
+						<i class="fa fa-whatsapp fa-fw"></i> <a href="tel:+<?php echo str_replace('-', '', get_slug($mySetting['custom-whatsapp_contact']) ); ?>"><?php echo $mySetting['custom-whatsapp_contact']; ?></a>
 					</div>
 					<div class="col-lg-3 col-md-3">
 						<i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:<?php echo $mySetting['custom-email_contact']; ?>"><?php echo $mySetting['custom-email_contact']; ?></a>
