@@ -59,6 +59,9 @@
 
 			echo $this->Html->css('smoothness/jquery-ui-1.8.18.custom');
 			echo $this->Html->css('colorbox');
+        
+            // WOW.js => Reveal Animations When You Scroll. Very Animate.css Friend :-)
+            echo $this->Html->css('animate');
 			
 			// custom style !!
 			echo $this->Html->css('style');
@@ -84,6 +87,9 @@
 			// ** Use this script to check browser support HTML-5 certain input types !!
 			// ** See http://diveintohtml5.info/detect.html for more details !!
 			// echo $this->Html->script('modernizr-2.6.1.min');
+        
+            // WOW.js => Reveal Animations When You Scroll. Very Animate.css Friend :-)
+            echo $this->Html->script('wow.min');
 			
 	    	// custom javascript !!
 	    	echo $this->Html->script('smooth_scrolling');
@@ -160,6 +166,9 @@
 		
 		<!-- ADDITIONAL SCRIPT FOR LAYOUT -->
 		<script>
+            // initialize WOW.js usage...
+            new WOW().init();
+            
 			$(document).ready(function(){
 				// Target your .container, .wrapper, .post, etc.
     			$("body").fitVids();

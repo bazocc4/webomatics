@@ -46,7 +46,7 @@
             <img src="<?php echo $homeimage['display']; ?>" alt="<?php echo $mySetting['title'].' '.$myEntry['Entry']['title']; ?> logo design website" class="img-responsive center-block">
             <h3><?php echo $myEntry['Entry']['description']; ?></h3>
             <br>
-            <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
+            <a href="#about" class="btn btn-dark btn-lg wow pulse" data-wow-iteration="infinite" data-wow-duration="2s">Find Out More</a>
         </div>
     </div>
 </header>
@@ -59,7 +59,11 @@
                 <?php
                     $about = $this->Get->meta_details('about', 'pages');
                 ?>
-                <h2><span class="glyphicon glyphicon-cloud"></span>&nbsp;&nbsp;<?php echo $about['Entry']['title']; ?>&nbsp;&nbsp;<span class="glyphicon glyphicon-cloud"></span></h2>
+                <h2>
+                    <span class="glyphicon glyphicon-cloud wow bounceInLeft" data-wow-delay="1s"></span>
+                    &nbsp;<?php echo $about['Entry']['title']; ?>&nbsp;
+                    <span class="glyphicon glyphicon-cloud wow bounceInRight" data-wow-delay="1s"></span>
+                </h2>
                 <div class="lead"><?php echo $about['Entry']['description']; ?></div>
             </div>
         </div>
@@ -82,6 +86,8 @@
                         {
                             $detail_link = $imagePath.$value['Entry']['entry_type'].'/#'.$value['Entry']['slug'];
                             // $detail_link = '#contact-area';
+                            
+                            $wow_delay = ($key % 2) * 500;
                             ?>
                     <div class="col-md-3 col-sm-6">
                         <div class="service-item">
@@ -93,7 +99,7 @@
                                 <strong><?php echo $value['Entry']['title']; ?></strong>
                             </h4>
                             <p><?php echo $value['EntryMeta']['teaser']; ?></p>
-                            <a href="<?php echo $detail_link; ?>" class="btn btn-light">Learn More</a>
+                            <a href="<?php echo $detail_link; ?>" class="btn btn-light wow pulse" data-wow-iteration="infinite" data-wow-duration="2s" data-wow-delay="<?php echo $wow_delay; ?>ms">Learn More</a>
                         </div>
                     </div>                            
                             <?php
@@ -116,7 +122,7 @@
 ?>
 <aside data-toggle="tooltip" data-placement="auto" alt="service-area" title="Click For More Services" id="service-banner" class="callout" style="background: url(<?php echo $imgLink['display']; ?>) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
     <div class="row text-vertical-center">
-        <div class="col-xs-offset-2 col-xs-8 banner-desc">
+        <div class="col-xs-offset-2 col-xs-8 banner-desc wow rotateIn" data-wow-offset="300" data-wow-delay="1s">
             <?php echo $sbanner['Entry']['description']; ?>
         </div>
     </div>    
@@ -134,7 +140,7 @@
                 </div>
                 <input type="hidden" id="portfolio-countPage" value="<?php echo $portfolio_countPage; ?>">
                 <!-- /.row (nested) -->
-                <a data-page="2" href="#" class="btn btn-dark view-more-items">
+                <a data-page="2" href="#" class="btn btn-dark view-more-items wow pulse" data-wow-iteration="infinite" data-wow-duration="2s">
                     <img class="hide" src="<?php echo $imagePath; ?>images/ajax-loader.gif" alt="loading portfolio">
                     <span>&nbsp;View More Works&nbsp;</span>
                 </a>

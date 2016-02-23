@@ -41,7 +41,7 @@
 <header class="header-image" style="background: url(<?php echo $imgLink['display']; ?>) no-repeat center center scroll; -webkit-background-size: cover; -moz-background-size: cover; background-size: cover; -o-background-size: cover;">
     <div class="headline">
         <div class="container">
-            <a href="#<?php echo $myList[0]['Entry']['slug']; ?>" class="btn btn-dark btn-lg">What We Do ...</a>
+            <a href="#<?php echo $myList[0]['Entry']['slug']; ?>" class="btn btn-dark btn-lg wow pulse" data-wow-iteration="infinite" data-wow-duration="2s">What We Do ...</a>
         </div>
     </div>
 </header>
@@ -53,9 +53,15 @@
         {
             $imgLink = $this->Get->image_link(array('id' => $value['Entry']['main_image']));
             $alt_title = $value['Entry']['title'].' - &#8220;'.$value['EntryMeta']['subtitle'].'&#8221;';
+            
+            $hr_style = '';
+            if($key == 0)
+            {
+                $hr_style = 'visibility: hidden;';
+            }
             ?>
     <div class="featurette" id="<?php echo $value['Entry']['slug']; ?>">        
-        <hr class="featurette-divider">
+        <hr class="featurette-divider" style="<?php echo $hr_style; ?>">
         <a alt="<?php echo $alt_title; ?>" title="<?php echo $alt_title; ?>" class="cboxElement" rel="gallery" href="<?php echo $imgLink['display']; ?>">
             <img class="featurette-image img-circle img-responsive pull-<?php echo ($key%2==0?'right':'left'); ?>" src="<?php echo $imgLink['display']; ?>" alt="<?php echo $value['Entry']['title'].' '.$value['Entry']['entry_type']; ?>">
         </a>

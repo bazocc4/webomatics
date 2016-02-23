@@ -46,7 +46,7 @@ CREATE TABLE `cms_accounts` (
 
 LOCK TABLES `cms_accounts` WRITE;
 /*!40000 ALTER TABLE `cms_accounts` DISABLE KEYS */;
-INSERT INTO `cms_accounts` VALUES (1,1,1,'admin','admin@yahoo.com','169e781bd52860b584879cbe117085da596238f3','2015-02-09 11:41:34','2013-01-04 00:00:00',1,'2013-01-04 00:00:00',1);
+INSERT INTO `cms_accounts` VALUES (1,1,1,'admin','admin@yahoo.com','169e781bd52860b584879cbe117085da596238f3','2016-02-23 12:30:44','2013-01-04 00:00:00',1,'2013-01-04 00:00:00',1);
 /*!40000 ALTER TABLE `cms_accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,10 +89,10 @@ INSERT INTO `cms_entries` VALUES (2,'pages','Home','home','where the <i class=\"
 INSERT INTO `cms_entries` VALUES (3,'pages','Your Solution to your Online Marketing Business','about','<p><span style=\"font-size:18px;\">Do you own Trading Company, Survey Company, or maybe Online Shop Company? Nowadays, all of these major can be boosted up with <em><strong>website technology</strong></em>, for faster &amp; easier management (not like using pencil &amp; paper anymore).</span></p>\r\n',0,0,1,0,'2014-10-02 14:02:44',1,'2014-10-29 13:41:00',1,3,'en-3');
 INSERT INTO `cms_entries` VALUES (4,'media','best-website-marketing-developer','best-website-marketing-developer',NULL,0,0,1,0,'2014-10-08 09:21:04',1,'2014-10-08 09:21:04',1,4,'en-4');
 INSERT INTO `cms_entries` VALUES (5,'pages','Services Banner','services-banner','<p><img alt=\"approved\" height=\"259\" src=\"/webomatics/img/upload/33.png\" width=\"536\" /></p>\r\n',4,0,1,0,'2014-10-08 09:21:17',1,'2014-10-14 14:06:11',1,5,'en-5');
-INSERT INTO `cms_entries` VALUES (6,'services','Website','website','<p>Design &amp; programming phase arrive here, where you are talking about design and we are giving those codes <span style=\"color:#0000FF;\"><em>out of the box.</em></span> At webomatics, you can choose to set out design initialization for your website, or request us to help building design implementation that suite your desire.</p>\r\n\r\n<p>From those point out, we gather all the resources, like PSD format files that illustrate website looks &amp; feel. Then, starting to write bunch of codes that building your website right away.</p>\r\n\r\n<blockquote>\r\n<p><em><span style=\"color:#0000FF;\"><strong>Being friends with technology makes life easier.</strong></span></em></p>\r\n</blockquote>\r\n\r\n<p><img alt=\"responsive-icon\" class=\"featurette-image pull-left\" height=\"243\" src=\"/webomatics/img/upload/46.png\" width=\"320\" />Besides all of those, we also like to play with <em><span style=\"color:#0000FF;\">responsive website.</span></em>&nbsp;In short, all&nbsp;website contents on each device are automatically arranged neatly to suite the device layout width, so there&#39;ll be no&nbsp;horizontal scrollbar anymore.</p>\r\n\r\n<p><em><span style=\"color:#0000FF;\">Back-End administrator system</span></em> will gear up your website too, which&nbsp;work by obtaining user input and gathering input from other systems to provide responsive data output&nbsp;on&nbsp;<em><span style=\"color:#0000FF;\">Front-End website views.</span></em></p>\r\n',15,0,1,0,'2014-10-08 11:15:04',1,'2014-10-29 11:11:05',1,7,'en-6');
-INSERT INTO `cms_entries` VALUES (7,'services','Analyst','analyst','<p>After we&#39;ve done for the final concept, we would analyze how to make these concept to get into <span style=\"color:#FF8C00;\"><em>design &amp; programming phase.</em></span>&nbsp;<span style=\"line-height: 20.7999992370605px;\">This phenomena always produce a lot of questions.</span></p>\r\n\r\n<p>Do&nbsp;those workflow concept meet&nbsp;data &amp; system requirements?&nbsp;What is in &amp;&nbsp;out of scope for this project?&nbsp;When do you want the system to go online? How to synchronize all the concept entity to be <em><span style=\"color:#FF8C00;\">one final website?</span><span style=\"color:#FFA500;\">&nbsp;</span></em>And much more of those questions ahead we&#39;d love to solve.</p>\r\n\r\n<blockquote style=\"border-left: none; border-right: 5px solid #eee;\">\r\n<p style=\"text-align: right;\"><span style=\"color:#FF8C00;\"><em><strong>Let us analyze the whole system for you.</strong></em></span></p>\r\n</blockquote>\r\n',13,0,1,0,'2014-10-08 11:16:35',1,'2014-10-29 10:59:41',1,8,'en-7');
-INSERT INTO `cms_entries` VALUES (8,'services','Conceptor','conceptor','<p><strong>1st thing 1st!</strong> Before beginning to do all your website campaign, what kind of preparation should you start? Just having campaign ideas&nbsp;actually not enough without <span style=\"color:#0000FF;\"><em>good workflow&nbsp;concept</em></span>.</p>\r\n\r\n<p>What kind of workflow system do you prefer? Is it inventory, survey, online e-commerce, or maybe POS system? What kind of market&nbsp;do your campaign targeted for? What services your company would like to help? We gladly like to <span style=\"color:#0000FF;\"><em>brainstorm it all</em></span> with your team.</p>\r\n\r\n<blockquote>\r\n<p><span style=\"color:#0000FF;\"><em><strong>We got&nbsp;your ideas &amp; You got&nbsp;our concept!</strong></em></span></p>\r\n</blockquote>\r\n',45,0,1,0,'2014-10-08 11:16:43',1,'2014-10-29 10:49:16',1,9,'en-8');
-INSERT INTO `cms_entries` VALUES (9,'services','Marketing','marketing','<p><strong>Last, but not least!</strong>&nbsp;The main goal for this marketing phase is how to attract people around the world to find your website online. Using marketing tools, such as <em><span style=\"color:#FF8C00;\">SEO (Search Engine Optimization), AdWords (service by Google), and social media sites,</span></em> can boost website traffic significantly.</p>\r\n\r\n<blockquote style=\"border-left: none; border-right: 5px solid #eee;\">\r\n<p style=\"text-align: right;\"><span style=\"color:#FF8C00;\"><em><strong>Create something people want to share.</strong></em></span></p>\r\n</blockquote>\r\n\r\n<p><img alt=\"google-ranking\" class=\"featurette-image pull-right\" height=\"186\" src=\"/webomatics/img/upload/47.png\" width=\"300\" />Improving your website&#39;s ranking at search engine, like Google, Yahoo, or Bing, is one of many ways to achieve those goal. <span style=\"color:#FF8C00;\"><em>Publish relevant content, update&nbsp;website content regularly, and have&nbsp;a link-worthy site</em></span> are some action that we need to accomplish.</p>\r\n\r\n<p>What kind of <em><span style=\"color:#FF8C00;\">marketing strategy</span></em> do we need to provoke customer to have interest for our campaign / products when they open the website online at very&nbsp;first sight? How to attract their eyes keep looking our website content without leaving? Our team ready to help you guys out of this challenge.</p>\r\n',44,0,1,0,'2014-10-08 11:16:52',1,'2014-10-29 11:14:51',1,6,'en-9');
+INSERT INTO `cms_entries` VALUES (6,'services','Website','website','<p>Design &amp; programming phase arrive here, where you are talking about design and we are giving those codes <span style=\"color:#0000FF;\"><em>out of the box.</em></span> At webomatics, you can choose to set out design initialization for your website, or request us to help building design implementation that suite your desire.</p>\r\n\r\n<p>From those point out, we gather all the resources, like PSD format files that illustrate website looks &amp; feel. Then, starting to write bunch of codes that building your website right away.</p>\r\n\r\n<blockquote>\r\n<p class=\"wow bounceInRight\" data-wow-delay=\"700ms\"><em><span style=\"color:#0000FF;\"><strong>Being friends with technology makes life easier.</strong></span></em></p>\r\n</blockquote>\r\n\r\n<p><img alt=\"responsive-icon\" class=\"featurette-image pull-left\" height=\"243\" src=\"/webomatics/img/upload/46.png\" width=\"320\" />Besides all of those, we also like to play with <em><span style=\"color:#0000FF;\">responsive website.</span></em>&nbsp;In short, all&nbsp;website contents on each device are automatically arranged neatly to suite the device layout width, so there&#39;ll be no&nbsp;horizontal scrollbar anymore.</p>\r\n\r\n<p><em><span style=\"color:#0000FF;\">Back-End administrator system</span></em> will gear up your website too, which&nbsp;work by obtaining user input and gathering input from other systems to provide responsive data output&nbsp;on&nbsp;<em><span style=\"color:#0000FF;\">Front-End website views.</span></em></p>',15,0,1,0,'2014-10-08 11:15:04',1,'2016-02-23 13:15:21',1,7,'en-6');
+INSERT INTO `cms_entries` VALUES (7,'services','Analyst','analyst','<p>After we&#39;ve done for the final concept, we would analyze how to make these concept to get into <span style=\"color:#FF8C00;\"><em>design &amp; programming phase.</em></span>&nbsp;<span style=\"line-height: 20.7999992370605px;\">This phenomena always produce a lot of questions.</span></p>\r\n\r\n<p>Do&nbsp;those workflow concept meet&nbsp;data &amp; system requirements?&nbsp;What is in &amp;&nbsp;out of scope for this project?&nbsp;When do you want the system to go online? How to synchronize all the concept entity to be <em><span style=\"color:#FF8C00;\">one final website?</span><span style=\"color:#FFA500;\">&nbsp;</span></em>And much more of those questions ahead we&#39;d love to solve.</p>\r\n\r\n<blockquote style=\"border-left: none; border-right: 5px solid #eee;\">\r\n<p class=\"wow bounceInLeft\" data-wow-delay=\"700ms\" style=\"text-align: right;\"><span style=\"color:#FF8C00;\"><em><strong>Let us analyze the whole system for you.</strong></em></span></p>\r\n</blockquote>\r\n',13,0,1,0,'2014-10-08 11:16:35',1,'2016-02-23 13:16:05',1,8,'en-7');
+INSERT INTO `cms_entries` VALUES (8,'services','Conceptor','conceptor','<p><strong>1st thing 1st!</strong> Before beginning to do all your website campaign, what kind of preparation should you start? Just having campaign ideas&nbsp;actually not enough without <span style=\"color:#0000FF;\"><em>good workflow&nbsp;concept</em></span>.</p>\r\n\r\n<p>What kind of workflow system do you prefer? Is it inventory, survey, online e-commerce, or maybe POS system? What kind of market&nbsp;do your campaign targeted for? What services your company would like to help? We gladly like to <span style=\"color:#0000FF;\"><em>brainstorm it all</em></span> with your team.</p>\r\n\r\n<blockquote>\r\n<p class=\"wow bounceInRight\" data-wow-delay=\"700ms\"><span style=\"color:#0000FF;\"><em><strong>We got&nbsp;your ideas &amp; You got&nbsp;our concept!</strong></em></span></p>\r\n</blockquote>\r\n',45,0,1,0,'2014-10-08 11:16:43',1,'2016-02-23 13:12:43',1,9,'en-8');
+INSERT INTO `cms_entries` VALUES (9,'services','Marketing','marketing','<p><strong>Last, but not least!</strong>&nbsp;The main goal for this marketing phase is how to attract people around the world to find your website online. Using marketing tools, such as <em><span style=\"color:#FF8C00;\">SEO (Search Engine Optimization), AdWords (service by Google), and social media sites,</span></em> can boost website traffic significantly.</p>\r\n\r\n<blockquote style=\"border-left: none; border-right: 5px solid #eee;\">\r\n<p class=\"wow bounceInLeft\" data-wow-delay=\"700ms\" style=\"text-align: right;\"><span style=\"color:#FF8C00;\"><em><strong>Create something people want to share.</strong></em></span></p>\r\n</blockquote>\r\n\r\n<p><img alt=\"google-ranking\" class=\"featurette-image pull-right\" height=\"186\" src=\"/webomatics/img/upload/47.png\" width=\"300\" />Improving your website&#39;s ranking at search engine, like Google, Yahoo, or Bing, is one of many ways to achieve those goal. <span style=\"color:#FF8C00;\"><em>Publish relevant content, update&nbsp;website content regularly, and have&nbsp;a link-worthy site</em></span> are some action that we need to accomplish.</p>\r\n\r\n<p>What kind of <em><span style=\"color:#FF8C00;\">marketing strategy</span></em> do we need to provoke customer to have interest for our campaign / products when they open the website online at very&nbsp;first sight? How to attract their eyes keep looking our website content without leaving? Our team ready to help you guys out of this challenge.</p>',44,0,1,0,'2014-10-08 11:16:52',1,'2016-02-23 13:16:21',1,6,'en-9');
 INSERT INTO `cms_entries` VALUES (10,'media','logo','logo',NULL,0,0,1,0,'2014-10-09 14:22:51',1,'2014-10-09 14:22:51',1,10,'en-10');
 INSERT INTO `cms_entries` VALUES (11,'developer','PT. Creazi Citra Cemerlang','creazi-citra-cemerlang','',10,0,1,0,'2014-10-09 14:22:57',1,'2014-10-13 13:39:47',1,11,'en-11');
 INSERT INTO `cms_entries` VALUES (12,'media','portfolio-1','portfolio-1',NULL,0,0,1,0,'2014-10-09 14:23:41',1,'2014-10-09 14:23:41',1,12,'en-12');
@@ -143,7 +143,7 @@ CREATE TABLE `cms_entry_metas` (
   `key` varchar(500) NOT NULL,
   `value` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=207 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=231 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -156,7 +156,7 @@ INSERT INTO `cms_entry_metas` VALUES (108,1,'image_size','25393');
 INSERT INTO `cms_entry_metas` VALUES (107,1,'image_type','png');
 INSERT INTO `cms_entry_metas` VALUES (106,4,'image_size','882233');
 INSERT INTO `cms_entry_metas` VALUES (105,4,'image_type','png');
-INSERT INTO `cms_entry_metas` VALUES (193,8,'form-teaser','<p><span style=\"line-height: 20.7999992370605px;\">Do you have an idea for&nbsp;website, but don&#39;t know what to do next? We&#39;re on your&nbsp;line.</span></p>\r\n');
+INSERT INTO `cms_entry_metas` VALUES (214,8,'form-teaser','<p><span style=\"line-height: 20.7999992370605px;\">Do you have an idea for&nbsp;website, but don&#39;t know what to do next? We&#39;re on your&nbsp;line.</span></p>\r\n');
 INSERT INTO `cms_entry_metas` VALUES (37,10,'image_type','png');
 INSERT INTO `cms_entry_metas` VALUES (38,10,'image_size','37514');
 INSERT INTO `cms_entry_metas` VALUES (77,11,'form-url_link','http://www.creazi.co.id');
@@ -202,28 +202,28 @@ INSERT INTO `cms_entry_metas` VALUES (123,38,'form-url_link','http://hatisehat.c
 INSERT INTO `cms_entry_metas` VALUES (124,38,'form-developer','creazi-citra-cemerlang');
 INSERT INTO `cms_entry_metas` VALUES (126,39,'image_type','jpg');
 INSERT INTO `cms_entry_metas` VALUES (127,39,'image_size','68008');
-INSERT INTO `cms_entry_metas` VALUES (196,7,'form-teaser','<p><span style=\"line-height: 20.7999992370605px;\">At webomatics, we help you to analyze what kind of data &amp; system that suite your website.</span></p>\r\n');
-INSERT INTO `cms_entry_metas` VALUES (199,6,'form-teaser','<p><span style=\"line-height: 20.7999992370605px;\">Using&nbsp;</span><em style=\"line-height: 20.7999992370605px;\"><strong><a href=\"http://en.wikipedia.org/wiki/Web_application_framework\" target=\"_blank\"><span style=\"color: rgb(255, 255, 255);\">WAF</span></a></strong></em><span style=\"line-height: 20.7999992370605px;\">&nbsp;&amp;&nbsp;</span><a href=\"http://en.wikipedia.org/wiki/HTML5\" style=\"line-height: 20.7999992370605px;\" target=\"_blank\"><em><strong><span style=\"color: rgb(255, 255, 255);\">HTML5&nbsp;Technology</span></strong></em></a><span style=\"line-height: 20.7999992370605px;\">, we guarantee your website are ready to be baked!</span></p>\r\n');
-INSERT INTO `cms_entry_metas` VALUES (202,9,'form-teaser','<p><span style=\"line-height: 20.7999992370605px;\">Attract&nbsp;business market to your website traffic with&nbsp;</span><em style=\"line-height: 20.7999992370605px;\"><strong><a href=\"http://en.wikipedia.org/wiki/Search_engine_optimization\" target=\"_blank\"><span style=\"color: rgb(255, 255, 255);\">SEO Technology</span></a></strong></em><span style=\"line-height: 20.7999992370605px;\">.</span></p>\r\n');
-INSERT INTO `cms_entry_metas` VALUES (195,7,'form-subtitle','look at the game like a coach');
-INSERT INTO `cms_entry_metas` VALUES (192,8,'form-subtitle','great concept, great start');
-INSERT INTO `cms_entry_metas` VALUES (198,6,'form-subtitle','talking with the codes');
+INSERT INTO `cms_entry_metas` VALUES (226,7,'form-teaser','<p><span style=\"line-height: 20.7999992370605px;\">At webomatics, we help you to analyze what kind of data &amp; system that suite your website.</span></p>\r\n');
+INSERT INTO `cms_entry_metas` VALUES (223,6,'form-teaser','<p><span style=\"line-height: 20.7999992370605px;\">Using&nbsp;</span><em style=\"line-height: 20.7999992370605px;\"><strong><a href=\"http://en.wikipedia.org/wiki/Web_application_framework\" target=\"_blank\"><span style=\"color: rgb(255, 255, 255);\">WAF</span></a></strong></em><span style=\"line-height: 20.7999992370605px;\">&nbsp;&amp;&nbsp;</span><a href=\"http://en.wikipedia.org/wiki/HTML5\" style=\"line-height: 20.7999992370605px;\" target=\"_blank\"><em><strong><span style=\"color: rgb(255, 255, 255);\">HTML5&nbsp;Technology</span></strong></em></a><span style=\"line-height: 20.7999992370605px;\">, we guarantee your website are ready to be baked!</span></p>\r\n');
+INSERT INTO `cms_entry_metas` VALUES (229,9,'form-teaser','<p><span style=\"line-height: 20.7999992370605px;\">Attract&nbsp;business market to your website traffic with&nbsp;</span><em style=\"line-height: 20.7999992370605px;\"><strong><a href=\"http://en.wikipedia.org/wiki/Search_engine_optimization\" target=\"_blank\"><span style=\"color: rgb(255, 255, 255);\">SEO Technology</span></a></strong></em><span style=\"line-height: 20.7999992370605px;\">.</span></p>\r\n');
+INSERT INTO `cms_entry_metas` VALUES (215,8,'form-icon','fa-puzzle-piece');
 INSERT INTO `cms_entry_metas` VALUES (173,43,'image_size','179959');
 INSERT INTO `cms_entry_metas` VALUES (172,43,'image_type','jpg');
 INSERT INTO `cms_entry_metas` VALUES (180,44,'image_size','61914');
 INSERT INTO `cms_entry_metas` VALUES (179,44,'image_type','jpg');
-INSERT INTO `cms_entry_metas` VALUES (201,9,'form-subtitle','building your traffic');
 INSERT INTO `cms_entry_metas` VALUES (187,45,'image_size','318493');
 INSERT INTO `cms_entry_metas` VALUES (186,45,'image_type','jpg');
 INSERT INTO `cms_entry_metas` VALUES (188,46,'image_type','png');
 INSERT INTO `cms_entry_metas` VALUES (189,46,'image_size','29870');
 INSERT INTO `cms_entry_metas` VALUES (190,47,'image_type','png');
 INSERT INTO `cms_entry_metas` VALUES (191,47,'image_size','41556');
-INSERT INTO `cms_entry_metas` VALUES (194,8,'form-icon','fa-puzzle-piece');
-INSERT INTO `cms_entry_metas` VALUES (197,7,'form-icon','fa-lightbulb-o');
-INSERT INTO `cms_entry_metas` VALUES (200,6,'form-icon','fa-html5');
-INSERT INTO `cms_entry_metas` VALUES (203,9,'form-icon','fa-users');
+INSERT INTO `cms_entry_metas` VALUES (222,6,'form-subtitle','talking with the codes');
 INSERT INTO `cms_entry_metas` VALUES (204,35,'count-portfolio','3');
+INSERT INTO `cms_entry_metas` VALUES (225,7,'form-subtitle','look at the game like a coach');
+INSERT INTO `cms_entry_metas` VALUES (213,8,'form-subtitle','great concept, great start');
+INSERT INTO `cms_entry_metas` VALUES (228,9,'form-subtitle','building your traffic');
+INSERT INTO `cms_entry_metas` VALUES (224,6,'form-icon','fa-html5');
+INSERT INTO `cms_entry_metas` VALUES (227,7,'form-icon','fa-lightbulb-o');
+INSERT INTO `cms_entry_metas` VALUES (230,9,'form-icon','fa-users');
 /*!40000 ALTER TABLE `cms_entry_metas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -267,7 +267,7 @@ CREATE TABLE `cms_settings` (
   `key` varchar(500) NOT NULL,
   `value` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -276,7 +276,7 @@ CREATE TABLE `cms_settings` (
 
 LOCK TABLES `cms_settings` WRITE;
 /*!40000 ALTER TABLE `cms_settings` DISABLE KEYS */;
-INSERT INTO `cms_settings` VALUES (1,'title','Webomatics');
+INSERT INTO `cms_settings` VALUES (1,'title','Webomatics - Website Services');
 INSERT INTO `cms_settings` VALUES (2,'tagline','website, business, technology, informatic, marketing, inventory, online, simple, easy, survey');
 INSERT INTO `cms_settings` VALUES (3,'description','where the Website, Technology & Informatics boost your business');
 INSERT INTO `cms_settings` VALUES (4,'date_format','d F Y');
@@ -297,6 +297,7 @@ INSERT INTO `cms_settings` VALUES (18,'usd_sell','9732.00');
 INSERT INTO `cms_settings` VALUES (19,'custom-pagination','10');
 INSERT INTO `cms_settings` VALUES (20,'custom-email_contact','info@webomatics.net');
 INSERT INTO `cms_settings` VALUES (21,'custom-phone_contact','(+6281) 7525-5381');
+INSERT INTO `cms_settings` VALUES (22,'custom-whatsapp_contact','(+6289) 67367-1110');
 /*!40000 ALTER TABLE `cms_settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -450,4 +451,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-02-18 15:36:53
+-- Dump completed on 2016-02-23 16:06:44
