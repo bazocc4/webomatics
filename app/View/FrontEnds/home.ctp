@@ -1,15 +1,10 @@
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <?php
-    App::import('Vendor', 'recaptchalib');
     echo $this->Html->script('masonry.pkgd.min');
 
 	$this->Get->create($data);
 	extract($data , EXTR_SKIP);
 ?>
-<script type="text/javascript">
-    var RecaptchaOptions = {
-        theme : 'white'
-    };
-</script>
 
 <!-- Navigation -->
 <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
@@ -191,7 +186,7 @@
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
                             <div class="form-group">
-                                <?php echo recaptcha_get_html(RECAPTCHA_PUBLIC_KEY, $recaptcha_error); ?>
+                                <div class="g-recaptcha center-block" data-sitekey="6LfKQBkTAAAAADjqRH2tGuaNHobpjmZ3EVGRqWzV" style="width: 304px;"></div>
                                 <br>
                                 <button type="submit" class="btn btn-lg btn-light" name="submitcontact">SEND MESSAGE</button>
                                 <button type="reset" class="btn btn-lg btn-dark">RESET</button>
@@ -304,7 +299,7 @@
                     if(!empty($recaptcha_error))
                     {
                         ?>
-                alert('Invalid CAPTCHA challenge (<?php echo $recaptcha_error; ?>)\nPlease try again.');
+                alert('Invalid reCAPTCHA challenge (<?php echo $recaptcha_error; ?>)\nPlease try again.');
                         <?php
                     }
                     else if($contact['success'] == -2)

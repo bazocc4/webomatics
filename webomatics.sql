@@ -46,7 +46,7 @@ CREATE TABLE `cms_accounts` (
 
 LOCK TABLES `cms_accounts` WRITE;
 /*!40000 ALTER TABLE `cms_accounts` DISABLE KEYS */;
-INSERT INTO `cms_accounts` VALUES (1,1,1,'admin','admin@yahoo.com','169e781bd52860b584879cbe117085da596238f3','2016-02-23 12:30:44','2013-01-04 00:00:00',1,'2013-01-04 00:00:00',1);
+INSERT INTO `cms_accounts` VALUES (1,1,1,'admin','admin@yahoo.com','169e781bd52860b584879cbe117085da596238f3','2016-02-23 16:30:11','2013-01-04 00:00:00',1,'2013-01-04 00:00:00',1);
 /*!40000 ALTER TABLE `cms_accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,7 +86,7 @@ LOCK TABLES `cms_entries` WRITE;
 /*!40000 ALTER TABLE `cms_entries` DISABLE KEYS */;
 INSERT INTO `cms_entries` VALUES (1,'media','medium-logo','medium-logo',NULL,0,0,1,0,'2014-10-02 13:54:24',1,'2014-10-02 13:54:24',1,1,'en-1');
 INSERT INTO `cms_entries` VALUES (2,'pages','Home','home','where the <i class=\"star-sign\">Website, Technology & Informatics</i> boost your business',1,0,1,0,'2014-10-02 13:55:41',1,'2015-01-13 15:36:44',1,2,'en-2');
-INSERT INTO `cms_entries` VALUES (3,'pages','Your Solution to your Online Marketing Business','about','<p><span style=\"font-size:18px;\">Do you own Trading Company, Survey Company, or maybe Online Shop Company? Nowadays, all of these major can be boosted up with <em><strong>website technology</strong></em>, for faster &amp; easier management (not like using pencil &amp; paper anymore).</span></p>\r\n',0,0,1,0,'2014-10-02 14:02:44',1,'2014-10-29 13:41:00',1,3,'en-3');
+INSERT INTO `cms_entries` VALUES (3,'pages','Your Solution to your Online Business Website','about','<p><span style=\"font-size:18px;\">Do you own Trading Company, Survey Company, or maybe Online Shop Company? Nowadays, all of these major can be boosted up with <em><strong>website technology</strong></em>, for faster &amp; easier management (not like using pencil &amp; paper anymore).</span></p>\r\n',0,0,1,0,'2014-10-02 14:02:44',1,'2016-02-23 16:31:27',1,3,'en-3');
 INSERT INTO `cms_entries` VALUES (4,'media','best-website-marketing-developer','best-website-marketing-developer',NULL,0,0,1,0,'2014-10-08 09:21:04',1,'2014-10-08 09:21:04',1,4,'en-4');
 INSERT INTO `cms_entries` VALUES (5,'pages','Services Banner','services-banner','<p><img alt=\"approved\" height=\"259\" src=\"/webomatics/img/upload/33.png\" width=\"536\" /></p>\r\n',4,0,1,0,'2014-10-08 09:21:17',1,'2014-10-14 14:06:11',1,5,'en-5');
 INSERT INTO `cms_entries` VALUES (6,'services','Website','website','<p>Design &amp; programming phase arrive here, where you are talking about design and we are giving those codes <span style=\"color:#0000FF;\"><em>out of the box.</em></span> At webomatics, you can choose to set out design initialization for your website, or request us to help building design implementation that suite your desire.</p>\r\n\r\n<p>From those point out, we gather all the resources, like PSD format files that illustrate website looks &amp; feel. Then, starting to write bunch of codes that building your website right away.</p>\r\n\r\n<blockquote>\r\n<p class=\"wow bounceInRight\" data-wow-delay=\"700ms\"><em><span style=\"color:#0000FF;\"><strong>Being friends with technology makes life easier.</strong></span></em></p>\r\n</blockquote>\r\n\r\n<p><img alt=\"responsive-icon\" class=\"featurette-image pull-left\" height=\"243\" src=\"/webomatics/img/upload/46.png\" width=\"320\" />Besides all of those, we also like to play with <em><span style=\"color:#0000FF;\">responsive website.</span></em>&nbsp;In short, all&nbsp;website contents on each device are automatically arranged neatly to suite the device layout width, so there&#39;ll be no&nbsp;horizontal scrollbar anymore.</p>\r\n\r\n<p><em><span style=\"color:#0000FF;\">Back-End administrator system</span></em> will gear up your website too, which&nbsp;work by obtaining user input and gathering input from other systems to provide responsive data output&nbsp;on&nbsp;<em><span style=\"color:#0000FF;\">Front-End website views.</span></em></p>',15,0,1,0,'2014-10-08 11:15:04',1,'2016-02-23 13:15:21',1,7,'en-6');
@@ -451,4 +451,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-02-23 16:06:44
+-- Dump completed on 2016-02-26 13:46:37

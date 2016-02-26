@@ -305,17 +305,22 @@ class EntriesController extends AppController {
         $valid = true;
 
         # check reCAPTCHA response!
-		App::import('Vendor', 'recaptchalib');
-		$resp = recaptcha_check_answer (RECAPTCHA_PRIVATE_KEY,
-            $_SERVER["REMOTE_ADDR"],
-            $_POST["recaptcha_challenge_field"],
-            $_POST["recaptcha_response_field"]);
-
-        if (!$resp->is_valid) 
+        if(empty($_POST["g-recaptcha-response"]))
         {
-        	# set the error code so that we can display it
-            $this->set('recaptcha_error' , $resp->error );
+            # set the error code so that we can display it
+            $this->set('recaptcha_error' , 'reCAPTCHA box must be clicked' );
             $valid = false;
+        }
+        else
+        {
+            $resp = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LfKQBkTAAAAAOu7OG8G6Hhun1-636xMkITUQVGq&response=".$_POST["g-recaptcha-response"]."&remoteip=".$_SERVER["REMOTE_ADDR"]), true);
+            
+            if( ! $resp['success'])
+            {
+                # set the error code so that we can display it
+                $this->set('recaptcha_error' , 'robot verification failed' );
+                $valid = false;
+            }
         }
         
         $result['success'] = 0;
