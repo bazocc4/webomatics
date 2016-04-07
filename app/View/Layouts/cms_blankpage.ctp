@@ -8,7 +8,7 @@
 		<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="author" content="<?php echo $mySetting['title']; ?>">		
-		<meta name="tagline" content="<?php echo $mySetting['tagline']; ?>">		
+		<meta name="keywords" content="<?php echo $mySetting['tagline']; ?>">		
 		<meta name="description" content="<?php echo $mySetting['description']; ?>">
 		<META NAME="ROBOTS" CONTENT="NOINDEX">
 <!-- 		FAVICON IMAGE -->		
