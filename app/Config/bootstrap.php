@@ -583,3 +583,15 @@ function parseGoogleDriveUrl($shareurl)
 	$id_drive = $pecahshare[count($pecahshare)-2];
 	return "https://docs.google.com/uc?export=download&id=".$id_drive;
 }
+
+/*
+clear tmp logs file !!
+*/
+function clearLogs()
+{
+    $files = glob('../tmp/logs/*'); // get all file names
+    foreach($files as $file){ // iterate files
+      if(is_file($file) && strtolower(basename($file)) != 'empty')
+        unlink($file); // delete file
+    }
+}

@@ -73,6 +73,11 @@ class SettingsController extends AppController {
 			
 			$this->redirect('/admin/settings');
 		}
+        else
+        {
+            // clean to refresh tmp logs file !!
+            clearLogs();
+        }
 	}
 
 	function del_lang($src , $dst)

@@ -2,17 +2,9 @@ var jcrop_api = new Array();
 (function($){
 	$(document).ready(function()
 	{
-		// colorbox initialization !!
-		if($('.cboxElement').length > 0)
-		{
-			$('.cboxElement').colorbox({
-		        fixed: true,
-		        reposition: false,
-		        maxWidth:'95%',
-		        maxHeight:'95%'
-		    });
-		}
-		
+        // colorbox initialization !!
+        $.getScript(site+"js/init_colorbox.js");
+        
 		// disable right-click for image !!
 		$('img').bind('contextmenu', function(e) {
 			return false;

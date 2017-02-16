@@ -11,16 +11,7 @@
         $('[data-toggle=tooltip]').each(function(){
             $(this).attr('title' , $(this).attr('alt') );
         });
-        
-        // REFRESH colorbox initialization !!
-		if($('.cboxElement').length > 0)
-		{
-			$('.cboxElement').colorbox({
-		        fixed: true,
-		        reposition: false,
-		        maxWidth:'95%',
-		        maxHeight:'95%'
-		    });
-		}
     });
 </script>
+<!-- REFRESH colorbox initialization !! -->
+<?php echo $this->Html->script('init_colorbox'); ?>
